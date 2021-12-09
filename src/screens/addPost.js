@@ -17,18 +17,24 @@ function Picker() {
 
     return (
         <DropDownPicker
+            showArrowIcon={true}
             open={open}
             value={value}
             items={items}
             setOpen={setOpen}
             setValue={setValue}
             setItems={setItems}
+            placeholder="Category"
+
             style={{
                 backgroundColor: COLORS.white,
+                borderColor: 'transparent'
             }}
-            containerStyle={{
-                borderWidth: 2,
-                borderColor: 'red'
+            placeholderStyle={[Styles.buttonText,
+            { color: COLORS.grayDark, alignSelf: 'center' }]}
+            arrowIconStyle={{
+                width: 20,
+                height: 35,
             }}
         />
     );
@@ -105,7 +111,9 @@ export default function addPost({ navigation }) {
                     </TouchableOpacity>
                 </View> */}
 
-                <View style={{ marginHorizontal: 16, marginTop: 16, height: 48, }}><Picker /></View>
+                <View style={[Styles.addImagesBox], { marginHorizontal: 16, marginTop: 16, height: 48, }}>
+                    <Picker/>
+                </View>
 
 
                 <View style={[Styles.addImagesBox, {}]}>
