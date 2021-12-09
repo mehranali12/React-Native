@@ -17,8 +17,8 @@ export default function joinUs({ navigation }) {
                 icon={require('../assets/icons/location.png')}
                 location="Pomona, CA"
             />
+            
             <View style={{ flex: 1 }}>
-
                 <View style={{ marginTop: 20 }}>
                     <Text style={GolbalStyle.title}>Join Us</Text>
                 </View>
@@ -32,7 +32,7 @@ export default function joinUs({ navigation }) {
                 <TextButton
                     style={{ color: COLORS.white, }}
                     text='Create Account'
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.navigate('login')}
                     icon={require('../assets/icons/user.png')}
                 />
                 <View style={{ marginTop: 24 }} />

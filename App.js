@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import joinUs from './src/screens/joinUs';
+import login from './src/screens/login';
 import home from './src/screens/home';
 import list from './src/screens/list';
 import chat from './src/screens/chat';
@@ -15,6 +16,7 @@ import { COLORS } from './src/constants';
 import CustomDrawer from './src/components/CustomDrawer';
 import profile from './src/screens/profile';
 import specialItem from './src/screens/specialItem';
+import signup from './src/screens/signup';
 
 
 const Drawer = createDrawerNavigator();
@@ -135,6 +137,8 @@ export default function App() {
         }}
       >
         <Stack.Screen name="JoinUs" component={joinUs} />
+        <Stack.Screen name="login" component={login} />
+        <Stack.Screen name="signup" component={signup} />
         <Stack.Screen name="Home" component={DrawerFtn} />
       </Stack.Navigator>
     </NavigationContainer>
