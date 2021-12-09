@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput, imageCaption } from "react-native";
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
 import TextButton from "../components/TextButton";
@@ -17,6 +17,10 @@ function Picker() {
 
     return (
         <DropDownPicker
+        listMode="SCROLLVIEW"
+        scrollViewProps={{
+            nestedScrollEnabled: true,
+        }}
             showArrowIcon={true}
             open={open}
             value={value}
@@ -25,6 +29,10 @@ function Picker() {
             setValue={setValue}
             setItems={setItems}
             placeholder="Category"
+            theme="DARK"
+            // setOpen={(open) => {
+            //     this.setState({ isRFIIROpen: open })
+            // }}
 
             style={{
                 backgroundColor: COLORS.white,
@@ -36,6 +44,16 @@ function Picker() {
                 width: 20,
                 height: 35,
             }}
+            dropDownContainerStyle={{
+                backgroundColor: COLORS.grayLight,
+                borderColor: 'transparent',
+                height: 'auto',
+              }}
+              listItemLabelStyle={{
+                color: COLORS.grayDark,
+                fontSize: 14,
+                fontFamily: FONTS.poppins,
+              }}
         />
     );
 }
@@ -60,6 +78,27 @@ export default function addPost({ navigation }) {
             })
             .catch(e => console.log("simple data..........", e));
     };
+
+    // const takePhotoFromCamera = () => {
+    //         let imgData = {
+    //         title: imageCaption,
+    //         mediaData: mediaData
+    //     
+    //     ImagePicker.openPicker({
+    //         multiple: true,
+    //         width: 200,
+    //         height: 200,
+    //         compressImageMaxHeight: 400,
+    //         // includeBase64: true,
+    //         compressImageMaxWidth: 400,
+    //         cropping: true,
+    //     }).then(response => {
+    //         console.log('received image', image);
+    //         setImgPath(image.path);
+    //         ChangeShowSafetyCenterPanel(false);
+
+    //     });
+    // };
 
 
     return (
@@ -138,7 +177,7 @@ export default function addPost({ navigation }) {
                     <TextButton
                         style={{ color: COLORS.white, fontSize: 18, lineHeight: 27, paddingHorizontal: -15 }}
                         text='Post ad'
-                    // onPress={() => navigation.navigate('specialItem')}
+                    onPress={() => navigation.navigate('home')}
                     />
                 </View>
             </ScrollView>
