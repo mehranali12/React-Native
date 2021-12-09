@@ -3,13 +3,14 @@ import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput,
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
+import { GolbalStyle } from "../utils/GlobalStyles";
 
 
 
 export default function bottom(props) {
     console.log(props)
     return (
-        <View style={Styles.maincontainer}>
+        <View style={{}}>
             {props?.data ? (
                 <View style={Styles.buttom}>
                     <View style={{ flexDirection: 'row' }}>
@@ -47,9 +48,6 @@ export default function bottom(props) {
 
 
 const Styles = StyleSheet.create({
-    maincontainer: {
-
-    },
     buttom: {
         backgroundColor: COLORS.white,
         flexDirection: 'row',
