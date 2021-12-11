@@ -17,10 +17,10 @@ function Picker() {
 
     return (
         <DropDownPicker
-        listMode="SCROLLVIEW"
-        scrollViewProps={{
-            nestedScrollEnabled: true,
-        }}
+            listMode="SCROLLVIEW"
+            scrollViewProps={{
+                nestedScrollEnabled: true,
+            }}
             showArrowIcon={true}
             open={open}
             value={value}
@@ -48,12 +48,12 @@ function Picker() {
                 backgroundColor: COLORS.grayLight,
                 borderColor: 'transparent',
                 height: 'auto',
-              }}
-              listItemLabelStyle={{
+            }}
+            listItemLabelStyle={{
                 color: COLORS.grayDark,
                 fontSize: 14,
                 fontFamily: FONTS.poppins,
-              }}
+            }}
         />
     );
 }
@@ -61,7 +61,8 @@ function Picker() {
 
 export default function addPost({ navigation }) {
 
-    const [image, setImgPath] = useState(image);
+    const [image, setImgPath] = useState();
+    
 
     const takePhotoFromCamera = () => {
         ImagePicker.openCamera({
@@ -70,37 +71,24 @@ export default function addPost({ navigation }) {
             height: 500,
             includeExif: true,
             mediaType: 'photo',
+            saveToPhotos: true,
         })
             .then(image => {
-                console.log('received image', image);
+                console.log('received image', image.path);
                 setImgPath(image.path);
-                ChangeShowSafetyCenterPanel(false);
-            })
-            .catch(e => console.log("simple data..........", e));
+            });
     };
 
-    // const takePhotoFromCamera = () => {
-    //         let imgData = {
-    //         title: imageCaption,
-    //         mediaData: mediaData
-    //     
+    // const takePhotoFromGallery = () => {
     //     ImagePicker.openPicker({
-    //         multiple: true,
-    //         width: 200,
-    //         height: 200,
-    //         compressImageMaxHeight: 400,
-    //         // includeBase64: true,
-    //         compressImageMaxWidth: 400,
-    //         cropping: true,
-    //     }).then(response => {
-    //         console.log('received image', image);
-    //         setImgPath(image.path);
-    //         ChangeShowSafetyCenterPanel(false);
-
+    //         width: 300,
+    //         height: 400,
+    //         cropping: true
+    //     }).then(image => {
+    //         console.log(image);
     //     });
-    // };
-
-
+    // }
+console.log(image);
     return (
         <View style={GolbalStyle.maincontainer}>
             <View style={GolbalStyle.header}>
@@ -108,16 +96,16 @@ export default function addPost({ navigation }) {
             </View>
             <ScrollView vertical={true} style={{ paddingVertical: 1, height: '20%', }}>
                 <View style={Styles.addImagesBox}>
+
                     <TouchableOpacity style={{ justifyContent: 'center' }}
-                        onPress={takePhotoFromCamera}
-                    >
+                        onPress={takePhotoFromCamera}>
                         <View style={Styles.Image}>
-                            <Image source={require('../assets/icons/addcamera.png')}
-                                style={{}}
-                            />
+                            <Image source={require('../assets/icons/addcamera.png')}/>
+                            <Text>{image ? 'Edit' : 'Upload'}</Text>
                         </View>
                     </TouchableOpacity>
-                    <View style={Styles.Image}>
+
+                    {/* <View style={Styles.Image}>
                         <Image source={require('../assets/icons/Rectangle.png')}
                             style={{}} />
                     </View>
@@ -132,7 +120,8 @@ export default function addPost({ navigation }) {
                     <View style={Styles.Image}>
                         <Image source={require('../assets/icons/Rectangle.png')}
                             style={{}} />
-                    </View>
+                    </View> */}
+                    
                 </View>
                 <View style={[Styles.addImagesBox, { height: 48, }]}>
                     <TextInput
@@ -151,7 +140,7 @@ export default function addPost({ navigation }) {
                 </View> */}
 
                 <View style={[Styles.addImagesBox], { marginHorizontal: 16, marginTop: 16, height: 48, }}>
-                    <Picker/>
+                    <Picker />
                 </View>
 
 
@@ -177,7 +166,7 @@ export default function addPost({ navigation }) {
                     <TextButton
                         style={{ color: COLORS.white, fontSize: 18, lineHeight: 27, paddingHorizontal: -15 }}
                         text='Post ad'
-                    onPress={() => navigation.navigate('home')}
+                        onPress={() => navigation.navigate('home')}
                     />
                 </View>
             </ScrollView>
