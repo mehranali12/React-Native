@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput, imageCaption } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput, FlatList } from "react-native";
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
 import TextButton from "../components/TextButton";
@@ -30,9 +30,6 @@ function Picker() {
             setItems={setItems}
             placeholder="Category"
             theme="DARK"
-            // setOpen={(open) => {
-            //     this.setState({ isRFIIROpen: open })
-            // }}
 
             style={{
                 backgroundColor: COLORS.white,
@@ -61,9 +58,7 @@ function Picker() {
 
 export default function addPost({ navigation }) {
 
-    const [image, setImgPath] = useState();
-    
-
+    const [image, setImgPath] = useState([]);
     const takePhotoFromCamera = () => {
         ImagePicker.openCamera({
             cropping: true,
@@ -73,22 +68,17 @@ export default function addPost({ navigation }) {
             mediaType: 'photo',
             saveToPhotos: true,
         })
-            .then(image => {
-                console.log('received image', image.path);
-                setImgPath(image.path);
+            .then(response => {
+                console.log('received your image', response);
+                let temp = image;
+                temp.push(response);
+                setImgPath(temp);
             });
     };
 
-    // const takePhotoFromGallery = () => {
-    //     ImagePicker.openPicker({
-    //         width: 300,
-    //         height: 400,
-    //         cropping: true
-    //     }).then(image => {
-    //         console.log(image);
-    //     });
-    // }
-console.log(image);
+
+    console.log('---------------------', image);
+
     return (
         <View style={GolbalStyle.maincontainer}>
             <View style={GolbalStyle.header}>
@@ -100,11 +90,10 @@ console.log(image);
                     <TouchableOpacity style={{ justifyContent: 'center' }}
                         onPress={takePhotoFromCamera}>
                         <View style={Styles.Image}>
-                            <Image source={require('../assets/icons/addcamera.png')}/>
-                            <Text>{image ? 'Edit' : 'Upload'}</Text>
+                            <Image source={require('../assets/icons/addcamera.png')} />
+                            {/* <Text>{image ? 'Edit' : 'Upload'}</Text> */}
                         </View>
                     </TouchableOpacity>
-
                     {/* <View style={Styles.Image}>
                         <Image source={require('../assets/icons/Rectangle.png')}
                             style={{}} />
@@ -120,8 +109,29 @@ console.log(image);
                     <View style={Styles.Image}>
                         <Image source={require('../assets/icons/Rectangle.png')}
                             style={{}} />
-                    </View> */}
-                    
+                    </View>  */}
+
+                    <FlatList
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        data={image}
+                        renderItem={({ item, index }) => (
+                            <Image source={item}
+                            key={index}
+                                style={{
+                                    width: 260,
+                                    height: 300,
+                                    resizeMode: 'contain',
+                                    margin: 8
+                                }} />
+                        )}
+
+
+                    // renderItem={renderItem}
+                    // keyExtractor={(item, index) => index}
+                    // numColumns={5}
+                    />
+
                 </View>
                 <View style={[Styles.addImagesBox, { height: 48, }]}>
                     <TextInput
@@ -129,15 +139,6 @@ console.log(image);
                         placeholder="Title"
                     />
                 </View>
-                {/* <View style={[Styles.addImagesBox, { height: 48, }]}>
-                    <Text style={[Styles.buttonText, { color: COLORS.grayDark, alignSelf: 'center' }]}>Category</Text>
-                    <TouchableOpacity style={{ justifyContent: 'center' }}>
-                        <View style={{ alignSelf: 'center' }}>
-                            <Image source={require('../assets/icons/downErrow.png')}
-                                style={{}} />
-                        </View>
-                    </TouchableOpacity>
-                </View> */}
 
                 <View style={[Styles.addImagesBox], { marginHorizontal: 16, marginTop: 16, height: 48, }}>
                     <Picker />
