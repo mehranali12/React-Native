@@ -17,11 +17,13 @@ import CustomDrawer from './src/components/CustomDrawer';
 import profile from './src/screens/profile';
 import specialItem from './src/screens/specialItem';
 import signup from './src/screens/signup';
-
+import {LogBox } from 'react-native'
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 const DrawerFtn = () => (
 
@@ -52,7 +54,7 @@ const tab = () => (
   <Tab.Navigator
     tabBarOptions={{
       showLabel: false,
-      style: { height: 60 }
+      // style: { height: 60 }
 
     }
     }
@@ -63,7 +65,7 @@ const tab = () => (
       options={{
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 24, height: 24 }}
+            style={{ width: 18, height: 18 }}
             source={require('./src/assets/icons/search1.png')}
           />
 
@@ -76,7 +78,7 @@ const tab = () => (
       options={{
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 24, height: 24 }}
+            style={{ width: 18, height: 18 }}
             source={require('./src/assets/icons/menu.png')}
           />
         )
@@ -90,7 +92,7 @@ const tab = () => (
       options={{
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 40, height: 40 }}
+            style={{ width: 34, height: 34 }}
             source={require('./src/assets/icons/addmore.png')}
           />
 
@@ -103,7 +105,7 @@ const tab = () => (
       options={{
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 24, height: 24 }}
+            style={{ width: 18, height: 18 }}
             source={require('./src/assets/icons/chat.png')}
           />
 
@@ -118,7 +120,7 @@ const tab = () => (
         tabBarVisible:false,
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 24, height: 24 }}
+            style={{ width: 18, height: 18 }}
             source={require('./src/assets/icons/user1.png')}
           />
 
