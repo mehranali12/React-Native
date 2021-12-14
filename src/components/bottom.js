@@ -38,7 +38,7 @@ export default function bottom(props) {
                 <View style={[Styles.buttom, { flexDirection: 'row-reverse', paddingHorizontal: 16, }]}>
                     <View style={{}}>
                         <Image source={require('../assets/icons/user1.png')}
-                            style={{ height: 24, width: 24, }} />
+                            style={{ height: 18, width: 18, }} />
                     </View>
                 </View>
             }

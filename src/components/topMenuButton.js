@@ -16,6 +16,7 @@ export default function topMenuButton({ tittle, style, }) {
 const Styles = StyleSheet.create({
     maincontainer: {
         flex: 1,
+       
     },
     buttonDiv: {
         paddingHorizontal: 16,

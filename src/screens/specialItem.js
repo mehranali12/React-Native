@@ -83,15 +83,16 @@ const Styles = StyleSheet.create({
         height: 80, width: '100%',
     },
     textStyle: {
-        backgroundColor: COLORS.white,
+        backgroundColor:'#fff',
         color: COLORS.black,
         fontFamily: FONTS.poppins,
         fontStyle: 'normal',
-        lineHeight: 24,
         fontSize: 10,
-        height: 50,
+        padding:"22%",
+        justifyContent:'center',
+        alignItems:"center",
         borderRadius: 15,
-        textAlign: 'center',
-        paddingTop: '12%'
+        textAlign:"center"
+       
     },
 });

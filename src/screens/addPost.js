@@ -58,44 +58,39 @@ function Picker() {
 
 export default function addPost({ navigation }) {
 
-    const [image, setImgPath] = useState([]);
-    
-    const takePhotoFromCamera = () => {
+    const [imageArray, setdata] = useState([])
+
+    const takePhotoFromCamera = async () => {
         ImagePicker.openCamera({
             cropping: true,
             width: 500,
             height: 500,
             includeExif: true,
             mediaType: 'photo',
-            saveToPhotos: true,
         })
             .then(response => {
                 console.log('received your image', response);
-                let temp = image;
-                temp.push(response);
-                setImgPath(temp);
-            });
+                var temp = [...imageArray]
+                temp.push(response)
+                setdata(temp)
+            }).catch((e) => console.log('error', error))
     };
-
-
-    console.log('---------------------', image);
-
     return (
         <View style={GolbalStyle.maincontainer}>
             <View style={GolbalStyle.header}>
                 <Text style={GolbalStyle.headertext}>My Posts</Text>
             </View>
-            <ScrollView vertical={true} style={{ paddingVertical: 1, height: '20%', }}>
-                <View style={Styles.addImagesBox}>
 
-                    <TouchableOpacity style={{ justifyContent: 'center' }}
-                        onPress={takePhotoFromCamera}>
-                        <View style={Styles.Image}>
-                            <Image source={require('../assets/icons/addcamera.png')} />
-                            <Text>{image ? 'Edit' : 'Upload'}</Text>
-                        </View>
-                    </TouchableOpacity>
-                    {/* <View style={Styles.Image}>
+            <View style={Styles.addImagesBox}>
+
+                <TouchableOpacity style={{ justifyContent: 'center' }}
+                    onPress={takePhotoFromCamera}>
+                    <View style={Styles.Image}>
+                        <Image source={require('../assets/icons/addcamera.png')} />
+                        {/* <Text>{image ? 'Edit' : 'Upload'}</Text> */}
+                    </View>
+                </TouchableOpacity>
+                {/* <View style={Styles.Image}>
                         <Image source={require('../assets/icons/Rectangle.png')}
                             style={{}} />
                     </View>
@@ -112,28 +107,33 @@ export default function addPost({ navigation }) {
                             style={{}} />
                     </View>  */}
 
-                    <FlatList
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                        data={image}
-                        renderItem={({ item, index }) => (
-                            <Image source={item}
-                            key={index}
+                <FlatList
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    data={imageArray}
+                    renderItem={({ item, index }) => {
+                        return (
+                            <Image source={{ uri: item.path }}
+                                key={index}
                                 style={{
-                                    width: 260,
-                                    height: 300,
+                                    width: 100,
+                                    height: 100,
                                     resizeMode: 'contain',
                                     margin: 8
                                 }} />
-                        )}
+
+                        )
+
+                    }}
 
 
                     // renderItem={renderItem}
-                    // keyExtractor={(item, index) => index}
-                    // numColumns={5}
-                    />
+                    keyExtractor={(item, index) => index}
 
-                </View>
+                />
+
+            </View>
+            <ScrollView vertical={true} style={{ paddingVertical: 1, height: '20%', }}>
                 <View style={[Styles.addImagesBox, { height: 48, }]}>
                     <TextInput
                         style={[Styles.buttonText, { color: COLORS.grayDark, width: '100%' }]}

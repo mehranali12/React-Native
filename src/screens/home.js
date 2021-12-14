@@ -228,7 +228,7 @@ export default function Home({ navigation }) {
                         </View>
                     </View>
                 </View>
-                <View style={{ backgroundColor: "#fff", paddingHorizontal: 16, paddingBottom: 16, }}>
+                <View style={{ backgroundColor: "#fff", paddingBottom: 16, }}>
                     <FlatList
                         data={category}
                         renderItem={renderItem}
