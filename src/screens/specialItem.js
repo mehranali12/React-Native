@@ -88,7 +88,7 @@ const Styles = StyleSheet.create({
         fontFamily: FONTS.poppins,
         fontStyle: 'normal',
         fontSize: 10,
-        padding:"22%",
+        padding:"20%",
         justifyContent:'center',
         alignItems:"center",
         borderRadius: 15,

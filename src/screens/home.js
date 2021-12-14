@@ -1,33 +1,35 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TextInput, FlatList, TouchableOpacity, ImageBackground, ScrollView, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, Image, TextInput, FlatList, TouchableOpacity, } from "react-native";
+import { ScrollView } from 'react-native-virtualized-view';
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
-import {GolbalStyle} from "../utils/GlobalStyles";
+import { GolbalStyle } from "../utils/GlobalStyles";
 
 export default function Home({ navigation }) {
+
     const category = [
         {
-            id: 1,
+            key: 0,
             name: 'LAPTOP',
             icon: require('../assets/icons/laptop.png')
         },
         {
-            id: 1,
+            key: 1,
             name: 'Vehcile',
             icon: require('../assets/icons/car.png')
         },
         {
-            id: 2,
+            key: 2,
             name: 'CAMERA',
             icon: require('../assets/icons/camera.png')
         },
         {
-            id: 3,
+            key: 3,
             name: 'HOUSE',
             icon: require('../assets/icons/home.png')
         },
         {
-            id: 4,
+            key: 4,
             name: 'ALL',
             icon: require('../assets/icons/window.png'),
             onPress: () => navigation.openDrawer(),
@@ -36,24 +38,24 @@ export default function Home({ navigation }) {
     const alldata = {
         car: [
             {
-                id: 0,
+                key: 5,
                 name: 'Rent a car',
                 icon: require('../assets/icons/car.png'),
             },
             {
-                id: 1,
+                key: 6,
                 name: 'Lorem Ipsum sit de ell more',
                 icon: require('../../assets/car.jpg'),
                 rate: '$10/day • $50/week • $90/month'
             },
             {
-                id: 2,
+                key: 7,
                 name: 'Lorem Ipsum sit de ell more',
                 icon: require('../../assets/car2.jpg'),
                 rate: '$10/day • $50/week • $90/month'
             },
             {
-                id: 3,
+                key: 8,
                 name: 'Lorem Ipsum sit de ell more',
                 icon: require('../../assets/carsmodel.jpg'),
                 rate: '$10/day • $50/week • $90/month'
@@ -61,24 +63,24 @@ export default function Home({ navigation }) {
         ],
         photography: [
             {
-                id: 0,
+                key: 9,
                 name: 'Photography',
                 icon: require('../assets/icons/camera.png'),
             },
             {
-                id: 1,
+                key: 10,
                 name: 'Lorem Ipsum sit de ell more',
                 icon: require('../../assets/camera1.jpg'),
                 rate: '$10/day • $50/week • $90/month'
             },
             {
-                id: 2,
+                key: 11,
                 name: 'Lorem Ipsum sit de ell more',
                 icon: require('../../assets/retrocamera.jpg'),
                 rate: '$10/day • $50/week • $90/month'
             },
             {
-                id: 3,
+                key: 12,
                 name: 'Lorem Ipsum sit de ell more',
                 icon: require('../../assets/camera2.jpg'),
                 rate: '$10/day • $50/week • $90/month'
@@ -87,28 +89,28 @@ export default function Home({ navigation }) {
     }
     const pupolerData = [
         {
-            id: 0,
+            key: 13,
             name: 'Lorem Ipsum sit de ell ',
             icon: require('../assets/icons/carsmodel.jpg'),
             rate: '$10/day • $50/week • $90/month',
             onPress: () => navigation.navigate('specialItem'),
         },
         {
-            id: 1,
+            key: 14,
             name: 'Lorem Ipsum sit  ell more',
             icon: require('../../assets/camera1.jpg'),
             rate: '$10/day • $50/week • $90/month',
             onPress: () => navigation.navigate('specialItem'),
         },
         {
-            id: 2,
+            key: 15,
             name: 'Lorem Ipsum  de ell more',
             icon: require('../../assets/house.jpg'),
             rate: '$10/day • $50/week • $90/month',
             onPress: () => navigation.navigate('specialItem'),
         },
         {
-            id: 3,
+            key: 16,
             name: 'Lorem Ipsum sit de ell more',
             icon: require('../../assets/carsmodel.jpg'),
             rate: '$10/day • $50/week • $90/month',
@@ -228,14 +230,16 @@ export default function Home({ navigation }) {
                         </View>
                     </View>
                 </View>
+
                 <View style={{ backgroundColor: "#fff", paddingBottom: 16, }}>
                     <FlatList
                         data={category}
                         renderItem={renderItem}
-                        keyExtractor={(item, index) => index}
+                        keyExtractor={(item, index) => item.key}
                         numColumns={5}
                     />
                 </View>
+
             </View>
 
             <ScrollView>
@@ -246,30 +250,36 @@ export default function Home({ navigation }) {
                     </View>
 
                     <FlatList
+                        scrollEnabled={false}
+                        nestedScrollEnabled={true}
                         data={pupolerData}
                         renderItem={renderpupolerDataItem}
-                        listkey={(item, index) => index}
+                        listkey={(item, index) => item.key}
                         numColumns={2}
                     />
                 </View>
+
                 <View style={GolbalStyle.bainer}>
                     <Image
                         source={require("../../assets/baner.jpg")}
                     />
                 </View>
+                
                 <View style={{ paddingHorizontal: 16, }}>
                     {Object.keys(alldata).map((item, key) => {
                         const a = item.toString()
                         return (
                             <View style={{ marginVertical: 16, }}>
                                 <FlatList
+                                    scrollEnabled={false}
+                                    nestedScrollEnabled={true}
                                     data={alldata[item]}
                                     renderItem={renderpupolerDataItem2}
-                                    listkey={(item, index) => index}
+                                    listkey={(item, index) => 'key' + index}
                                     numColumns={2}
                                 />
                             </View>
-                        )
+                        );
                     })}
                 </View>
             </ScrollView>
@@ -278,8 +288,8 @@ export default function Home({ navigation }) {
 }
 
 const Styles = StyleSheet.create({
-    toptext:{
-        fontSize: 10, 
+    toptext: {
+        fontSize: 10,
         paddingTop: 5,
         fontFamily: FONTS.poppinsMedium,
         fontStyle: 'normal',
@@ -331,5 +341,5 @@ const Styles = StyleSheet.create({
         lineHeight: 15,
         paddingBottom: 10
     },
-   
+
 });

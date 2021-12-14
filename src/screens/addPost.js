@@ -60,6 +60,28 @@ export default function addPost({ navigation }) {
 
     const [imageArray, setdata] = useState([])
 
+    let selectImages = () => {
+        const buttons = ['Camera', 'Photo Library', 'Cancel'];
+        ActionSheet.show(
+            {
+                options: buttons,
+                cancelButtonIndex: 2,
+            },
+            buttonIndex => {
+                switch (buttonIndex) {
+                    case 0:
+                        takePhotoFromCamera();
+                        break;
+                    case 1:
+                        choosePhotosFromGallery();
+                        break;
+                    default:
+                        break;
+                }
+            },
+        );
+    }
+
     const takePhotoFromCamera = async () => {
         ImagePicker.openCamera({
             cropping: true,
@@ -87,9 +109,10 @@ export default function addPost({ navigation }) {
                     onPress={takePhotoFromCamera}>
                     <View style={Styles.Image}>
                         <Image source={require('../assets/icons/addcamera.png')} />
-                        {/* <Text>{image ? 'Edit' : 'Upload'}</Text> */}
+                        {/* <Text>{imageArray ? 'Edit' : 'Upload'}</Text> */}
                     </View>
                 </TouchableOpacity>
+
                 {/* <View style={Styles.Image}>
                         <Image source={require('../assets/icons/Rectangle.png')}
                             style={{}} />
@@ -116,10 +139,12 @@ export default function addPost({ navigation }) {
                             <Image source={{ uri: item.path }}
                                 key={index}
                                 style={{
-                                    width: 100,
-                                    height: 100,
+                                    width: 60,
+                                    height: 60,
+                                    borderRadius: 15,
                                     resizeMode: 'contain',
-                                    margin: 8
+                                    marginLeft: 16,
+                                    marginVertical: 16,
                                 }} />
 
                         )
