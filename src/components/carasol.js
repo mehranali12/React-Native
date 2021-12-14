@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { View, Image, StyleSheet, Dimensions, } from "react-native";
+import React, {Component} from "react";
+import { View, Image, StyleSheet, Dimensions,Animated } from "react-native";
 import Carousel from 'react-native-banner-carousel';
 
 const BannerWidth = Dimensions.get('window').width;
@@ -21,16 +21,14 @@ export default class slider extends React.Component {
                 <Image source={require('../assets/icons/heart.png')} style={{ height: 24, width: 24, }} />
                 <Image source={require('../assets/icons/share.png')} />
             </View>
-
         );
     }
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={[styles.container, {}]}> 
                 <Carousel
                     layout={'tinder'}
-                    // useNativeDriver={true}
                     autoplay
                     autoplayTimeout={5000}
                     loop
@@ -48,6 +46,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
 });
