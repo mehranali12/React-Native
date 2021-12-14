@@ -59,6 +59,7 @@ function Picker() {
 export default function addPost({ navigation }) {
 
     const [image, setImgPath] = useState([]);
+    
     const takePhotoFromCamera = () => {
         ImagePicker.openCamera({
             cropping: true,
@@ -91,7 +92,7 @@ export default function addPost({ navigation }) {
                         onPress={takePhotoFromCamera}>
                         <View style={Styles.Image}>
                             <Image source={require('../assets/icons/addcamera.png')} />
-                            {/* <Text>{image ? 'Edit' : 'Upload'}</Text> */}
+                            <Text>{image ? 'Edit' : 'Upload'}</Text>
                         </View>
                     </TouchableOpacity>
                     {/* <View style={Styles.Image}>
