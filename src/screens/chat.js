@@ -53,33 +53,124 @@ export default function searchCategory({ navigation }) {
             p2: 'Hello there, Hope you are doing well...',
             image: require('../assets/icons/rightErrow.png'),
         },
+        {
+            id: 6,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 7,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 8,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 9,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 10,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 11,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 12,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        }, {
+            id: 13,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 14,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 15,
+            name: 'Item 1',
+            icon: require('../../assets/carsmodel.jpg'),
+            day: 'Mon',
+            p1: 'Person 1',
+            p2: 'Hello there, Hope you are doing well...',
+            image: require('../assets/icons/rightErrow.png'),
+        },
     ];
 
     const renderBox = (item, index) => {
         return (
-            <View style={{ marginHorizontal: 16, marginTop: 16,}} key={index}>
-                <TouchableOpacity
-                    style={{ flexDirection: "row", backgroundColor: "#fff", borderRadius: 15, height: 94 }}>
-                    <Image
-                        style={{ borderTopLeftRadius: 8, borderBottomLeftRadius: 8, height: 93, width: '25%' }}
-                        resizeMode="cover"
-                        source={item.icon}
-                    />
-                    <View style={{ paddingHorizontal: '3%', paddingVertical: '3%', flex: 1, }}>
-                        <View  style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: 16, }}>{item.name}</Text>
-                            <Text style={{}}>{item.day}</Text>
+            <View style={{ paddingHorizontal: 16, marginBottom: 16}}>
+                <View style={{}} key={index}>
+                    <TouchableOpacity
+                        style={{ flexDirection: "row", backgroundColor: "#fff", borderRadius: 15, height: 94 }}>
+                        <Image
+                            style={{ borderTopLeftRadius: 8, borderBottomLeftRadius: 8, height: 93, width: '25%' }}
+                            resizeMode="cover"
+                            source={item.icon}
+                        />
+                        <View style={{ paddingHorizontal: '3%', paddingVertical: '3%', flex: 1, }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Text style={{ fontSize: 16, }}>{item.name}</Text>
+                                <Text style={{}}>{item.day}</Text>
+                            </View>
+                            <Text style={{ marginTop: 6, fontSize: 14, }}>{item.p1}</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Text style={{ marginTop: 8, fontSize: 10 }}>{item.p2}</Text>
+                                <Image
+                                    style={{ height: 16, width: 10, alignSelf: 'center', }}
+                                    source={item.image}
+                                />
+                            </View>
                         </View>
-                        <Text style={{ marginTop: 6, fontSize: 14, }}>{item.p1}</Text>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ marginTop: 8, fontSize: 10 }}>{item.p2}</Text>
-                            <Image
-                                style={{ height: 16, width: 10, alignSelf: 'center', }}
-                                source={item.image}
-                            />
-                        </View>
-                    </View>
-                </TouchableOpacity>
+                    </TouchableOpacity>
+                </View>
             </View>
         )
 
@@ -104,7 +195,8 @@ export default function searchCategory({ navigation }) {
                 </View>
             </View>
 
-            <ScrollView>
+
+            <ScrollView showsVerticalScrollIndicator={false}>
                 {
                     category.map((item, index) => {
                         return renderBox(item, index)
@@ -124,6 +216,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         paddingHorizontal: 16,
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginBottom: 16,
     },
 });

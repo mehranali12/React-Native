@@ -4,18 +4,24 @@ import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
 
 
-export default function Header({ icon, text, image, location }) {
+export default function Header({ icon, Keera, rating, image, location }) {
     return (
         <View style={Styles.maincontainer}>
 
             <View style={Styles.header}>
                 <View style={{ flexDirection: 'row', }}>
-                    {image ? (
-                        <Image source={image}
-                            style={{ height: 50, width: 50, borderRadius: 25, }}
-                        />
-                    ) : null}
-                    <Text style={Styles.headertext}>{text}</Text>
+
+                    {
+                        image ? (
+                            <Image source={image}
+                                style={{ height: 50, width: 50, borderRadius: 25, }}
+                            />
+                        ) : null
+                    }
+                    <View style={{alignItems: 'center', paddingTop: 1,}}>
+                        <Text style={Styles.Keera}>{Keera}</Text>
+                        <Text style={{}}>{rating}</Text>
+                    </View>
                 </View>
 
                 <View style={{ flexDirection: "row" }}>
@@ -34,23 +40,22 @@ export default function Header({ icon, text, image, location }) {
 
 
 const Styles = StyleSheet.create({
-    maincontainer: {},
     header: {
         height: 70,
         backgroundColor: COLORS.white,
         flexDirection: 'row',
+        justifyContent: "space-between",
         paddingHorizontal: 16,
         alignItems: 'center',
-        justifyContent: 'space-between'
     },
-    headertext: {
+    Keera: {
         color: COLORS.black,
         fontFamily: FONTS.poppins,
         fontSize: 20,
         lineHeight: 30,
         fontStyle: 'normal',
-        marginLeft: 16,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        paddingLeft: 16,
     },
     text: {
         color: COLORS.grayDark,
@@ -58,7 +63,6 @@ const Styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 24,
         fontStyle: 'normal',
-
         alignSelf: 'center'
     },
 });

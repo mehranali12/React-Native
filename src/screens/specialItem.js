@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image,} from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, Modal } from "react-native";
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
 import TopMenuButton from "../components/topMenuButton";
@@ -9,11 +9,39 @@ import { GolbalStyle } from "../utils/GlobalStyles";
 
 
 export default function specialItem({ navigation, props }) {
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const hideModal = () => setVisible(false);
+
     return (
         <View style={GolbalStyle.maincontainer}>
+
+            {/** This is the start modal of popup screen**/}
+            <Modal
+                transparent={true}
+                visible={modalOpen}>
+                <View style={{
+                    flex: 1,
+                    backgroundColor: COLORS.white,
+                    width: 80,
+                    borderWidth: 1,
+                    borderColor: 'red',
+                    borderTopLeftRadius: 15,
+                    borderTopRightRadius: 15,
+                    alignItems: 'center',
+                }}>
+                    <TouchableOpacity  onPress={() => setModalOpen(false)}>
+                    <View style={{borderWidth: 1, marginTop: 16, height: 20, width: 20, alignItems: 'center', justifyContent: 'center'}}>
+                        <Image source={require('../assets/icons/downErrow.png')} style={{}} />
+                    </View>
+                    </TouchableOpacity>
+                </View>
+            </Modal>
+
+
             <View style={{ flex: 1 }}>
                 <View style={Styles.slider}>
-                  <Slider/>
+                    <Slider />
                 </View>
                 <View style={[Styles.textView, { marginTop: 10 }]}>
                     <Text style={Styles.text}>2017 BMW</Text>
@@ -28,17 +56,23 @@ export default function specialItem({ navigation, props }) {
                     </View>
                 </View>
                 <View style={Styles.TopMenuButtonDiv}>
-                    <TopMenuButton tittle='$50/day' style={Styles.textStyle} />
-                    <TopMenuButton tittle='$50/week' style={Styles.textStyle} />
-                    <TopMenuButton tittle='$50/month' style={Styles.textStyle} />
+                    <TopMenuButton tittle='$50/' subTittle='day' style={Styles.textStyle} />
+                    <TopMenuButton tittle='$50/' subTittle='week' style={Styles.textStyle} />
+                    <TopMenuButton tittle='$50/' subTittle='month' style={Styles.textStyle} />
                 </View>
                 <View style={[Styles.textView, {}]}>
                     <Text style={Styles.text}>About Item:</Text>
                 </View>
                 <View style={[Styles.textView, {}]}>
-                    <Text style={Styles.text1}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</Text>
+                    <Text style={Styles.text1}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text......................</Text>
                 </View>
             </View>
+            <TouchableOpacity style={{ flexDirection: 'row-reverse', }} onPress={() => setModalOpen(true)}>
+                <View style={{ height: 50, width: 40, borderBottomWidth: 1, borderLeftWidth: 1, marginBottom: 5, justifyContent: 'center', alignItems: 'center', borderTopLeftRadius: 15, backgroundColor: COLORS.white, elevation: 2, }}>
+                    <Image source={require('../assets/icons/upErrow.png')} style={{}} />
+                </View>
+            </TouchableOpacity>
+
             <Bottom data={true} />
         </View>
     );
@@ -79,20 +113,14 @@ const Styles = StyleSheet.create({
     TopMenuButtonDiv: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingTop: 16,
-        height: 80, width: '100%',
+        marginVertical: 16,
     },
     textStyle: {
-        backgroundColor:'#fff',
         color: COLORS.black,
         fontFamily: FONTS.poppins,
         fontStyle: 'normal',
-        fontSize: 10,
-        padding:"20%",
-        justifyContent:'center',
-        alignItems:"center",
-        borderRadius: 15,
-        textAlign:"center"
-       
+        fontSize: 14,
+        justifyContent: 'center',
+        textAlign: "center",
     },
 });

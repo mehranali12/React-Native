@@ -16,7 +16,8 @@ export default function searchCategory({ navigation }) {
             time: '2h',
             p1: '$10/day',
             p2: '$10/day',
-            p3: '$10/day'
+            p3: '$10/day',
+            image: require('../assets/icons/rightErrow.png'),
         },
         {
             id: 2,
@@ -25,7 +26,8 @@ export default function searchCategory({ navigation }) {
             time: '1h',
             p1: '$10/day',
             p2: '$10/day',
-            p3: '$10/day'
+            p3: '$10/day',
+            image: require('../assets/icons/rightErrow.png'),
         },
         {
             id: 1,
@@ -34,7 +36,8 @@ export default function searchCategory({ navigation }) {
             time: '2h',
             p1: '$10/day',
             p2: '$10/day',
-            p3: '$10/day'
+            p3: '$10/day',
+            image: require('../assets/icons/rightErrow.png'),
         },
         {
             id: 2,
@@ -43,7 +46,8 @@ export default function searchCategory({ navigation }) {
             time: '1h',
             p1: '$10/day',
             p2: '$10/day',
-            p3: '$10/day'
+            p3: '$10/day',
+            image: require('../assets/icons/rightErrow.png'),
         },
         {
             id: 1,
@@ -52,7 +56,8 @@ export default function searchCategory({ navigation }) {
             time: '2h',
             p1: '$10/day',
             p2: '$10/day',
-            p3: '$10/day'
+            p3: '$10/day',
+            image: require('../assets/icons/rightErrow.png'),
         },
         {
             id: 2,
@@ -61,7 +66,8 @@ export default function searchCategory({ navigation }) {
             time: '1h',
             p1: '$10/day',
             p2: '$10/day',
-            p3: '$10/day'
+            p3: '$10/day',
+            image: require('../assets/icons/rightErrow.png'),
         },
     ];
 
@@ -71,33 +77,43 @@ export default function searchCategory({ navigation }) {
             showBanner = true
         }
         return (
-            <View key={index}>
-                {showBanner ? (
-                    <Image
-                        style={{ marginVertical: 12 }}
-                        source={require("../../assets/baner.jpg")}
-                    />
-                ) : null}
+            <View key={index} style={{}}>
+                {
+                    showBanner ? (
+                        <Image
+                            style={{ marginTop: 16 }}
+                            source={require("../../assets/baner.jpg")}
+                        />
+                    ) : null
+                }
 
-                <TouchableOpacity
-                    style={{ flexDirection: "row", marginTop: 12, backgroundColor: "#fff", marginHorizontal: 12, borderRadius: 15, height: 150 }}
-                >
+                <View style={{ flexDirection: "row", marginTop: 16, backgroundColor: "#fff", marginHorizontal: 12, borderRadius: 15, height: 150, elevation: 3,}}>
                     <Image
                         style={{ borderTopLeftRadius: 8, borderBottomLeftRadius: 8, height: 150, width: '48%' }}
                         resizeMode="cover"
-                        source={item.icon} />
-                    <View style={{ flexDirection: "row", padding: "3%", justifyContent: "space-between", flex: 1 }}>
-                        <View>
+                        source={item.icon}
+                    />
+                    <View style={{ padding: "3%", flex: 1 }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text>{item.name}</Text>
-                            <Text style={{ marginTop: 14 }}>{item.p1}</Text>
-                            <Text style={{ marginTop: 14, marginBottom: 14 }}>{item.p2}</Text>
-                            <Text>{item.p3}</Text>
+                            <View>
+                                <Text style={{ fontSize: 16 }}>{item.time}</Text>
+                            </View>
                         </View>
-                        <View>
-                            <Text style={{ fontSize: 16 }}>{item.time}</Text>
+                        <Text style={{ marginTop: 14 }}>{item.p1}</Text>
+                        <Text style={{ marginTop: 14, marginBottom: 14 }}>{item.p2}</Text>
+
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Text>{item.p3}</Text>
+                            <TouchableOpacity>
+                                <Image
+                                    style={{ height: 16, width: 10, alignSelf: 'center', }}
+                                    source={item.image}
+                                />
+                            </TouchableOpacity>
                         </View>
                     </View>
-                </TouchableOpacity>
+                </View>
             </View>
         )
 
@@ -105,47 +121,46 @@ export default function searchCategory({ navigation }) {
     return (
         <View style={[GolbalStyle.maincontainer]}>
 
-            <View style={{ backgroundColor: COLORS.white, paddingVertical: 16, paddingHorizontal: 16, }}>
-                <View style={{ flexDirection: "row", borderRadius: 10, justifyContent: "space-between", backgroundColor: COLORS.grayLight, }}>
-                    <View style={{ flexDirection: "row", justifyContent: 'space-between', paddingHorizontal: 16, }}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Image
-                                style={{ width: 20, height: 20 }}
-                                source={require('../assets/icons/search.png')} />
-                        </View>
-                        <View style={{ width: "85%" }}>
+            <View style={{ backgroundColor: COLORS.white, paddingHorizontal: 16, }}>
+
+                <View style={{ borderRadius: 10, backgroundColor: COLORS.grayLight, marginTop: 24, height: 55, marginHorizontal: 16, }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+
+                        <View style={{ justifyContent: "center", alignItems: 'center', paddingLeft: 16, flexDirection: 'row', }}>
+                            <TouchableOpacity onPress={() => navigation.goBack()}>
+                                <Image
+                                    style={{}}
+                                    source={require('../assets/icons/leftArrow.png')}
+                                />
+                            </TouchableOpacity>
                             <TextInput
-                                style={{ justifyContent: "center", marginLeft: 6 }}
+                                style={{ justifyContent: "center", marginLeft: 12 }}
                                 placeholder='Search Vehicles'
                             />
                         </View>
-                        <View style={{ width: 20, height: 48, width: 35, justifyContent: "center", backgroundColor: COLORS.green, borderTopRightRadius: 15, borderBottomRightRadius: 15, }}>
+
+                        <View style={{ justifyContent: 'center', backgroundColor: COLORS.green, borderTopRightRadius: 15, borderBottomRightRadius: 15, height: 55 }}>
                             <Image
-                                style={{ width: 20, height: 20, alignSelf: 'center' }}
+                                style={{ height: 40, width: 40, }}
                                 source={require('../assets/icons/level.png')} />
                         </View>
                     </View>
                 </View>
+
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <View style={[GolbalStyle.TopMenuButtonDiv, { marginTop: 16, marginBottom: -16, }]}>
+                        <TopMenuButton tittle='Model' style={[GolbalStyle.TopMenuButtonDivText, {}]} />
+                        <TopMenuButton tittle='Price' style={GolbalStyle.TopMenuButtonDivText} />
+                        <TopMenuButton tittle='Make' style={GolbalStyle.TopMenuButtonDivText} />
+                    </View>
+                    {
+                        category.map((item, index) => {
+                            return renderBox(item, index)
+                        })
+                    }
+                </ScrollView>
+
             </View>
-
-            <View style={GolbalStyle.TopMenuButtonDiv}>
-                <TopMenuButton tittle='Model' style={[GolbalStyle.TopMenuButtonDivText, {}]} />
-                <TopMenuButton tittle='Price' style={GolbalStyle.TopMenuButtonDivText} />
-                <TopMenuButton tittle='Make' style={GolbalStyle.TopMenuButtonDivText} />
-            </View>
-
-            <ScrollView>
-                {
-                    category.map((item, index) => {
-                        return renderBox(item, index)
-                    })
-                }
-            </ScrollView>
-
         </View>
     );
 }
-
-
-const Styles = StyleSheet.create({
-});

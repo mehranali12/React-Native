@@ -90,7 +90,7 @@ export default function Home({ navigation }) {
     const pupolerData = [
         {
             key: 13,
-            name: 'Lorem Ipsum sit de ell ',
+            name: 'Lorem Ipsum sit de ell more',
             icon: require('../assets/icons/carsmodel.jpg'),
             rate: '$10/day • $50/week • $90/month',
             onPress: () => navigation.navigate('specialItem'),
@@ -242,7 +242,7 @@ export default function Home({ navigation }) {
 
             </View>
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ paddingHorizontal: 16, }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", paddingBottom: 6 }}>
                         <Text style={Styles.title}>Trending Now</Text>

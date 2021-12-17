@@ -7,6 +7,7 @@ import { GolbalStyle } from "../utils/GlobalStyles";
 
 export default TextButton = ({ text, onPress, icon, style }) => {
     return (
+        <View style={{}}>
         <TouchableOpacity onPress={onPress} style={[GolbalStyle.loginButton, style]} >
             <Image source={icon}
                 style={{ height: 19, width: 19, }} />
@@ -14,5 +15,6 @@ export default TextButton = ({ text, onPress, icon, style }) => {
                 { paddingLeft: icon ? 8 : 0, fontSize: 16, fontFamily: FONTS.poppins, }]}>
                 {text}</Text>
         </TouchableOpacity>
+        </View>
     )
 }

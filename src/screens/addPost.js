@@ -103,8 +103,7 @@ export default function addPost({ navigation }) {
                 <Text style={GolbalStyle.headertext}>My Posts</Text>
             </View>
 
-            <View style={Styles.addImagesBox}>
-
+            <View style={[Styles.addImagesBox, {height: 85}]}>
                 <TouchableOpacity style={{ justifyContent: 'center' }}
                     onPress={takePhotoFromCamera}>
                     <View style={Styles.Image}>
@@ -144,21 +143,16 @@ export default function addPost({ navigation }) {
                                     borderRadius: 15,
                                     resizeMode: 'contain',
                                     marginLeft: 16,
-                                    marginVertical: 16,
+                                    marginVertical: 14,
                                 }} />
-
                         )
-
                     }}
-
-
                     // renderItem={renderItem}
                     keyExtractor={(item, index) => index}
-
                 />
 
             </View>
-            <ScrollView vertical={true} style={{ paddingVertical: 1, height: '20%', }}>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={[Styles.addImagesBox, { height: 48, }]}>
                     <TextInput
                         style={[Styles.buttonText, { color: COLORS.grayDark, width: '100%' }]}

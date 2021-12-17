@@ -17,7 +17,7 @@ import CustomDrawer from './src/components/CustomDrawer';
 import profile from './src/screens/profile';
 import specialItem from './src/screens/specialItem';
 import signup from './src/screens/signup';
-import {LogBox } from 'react-native'
+import { LogBox } from 'react-native'
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -54,18 +54,17 @@ const tab = () => (
   <Tab.Navigator
     tabBarOptions={{
       showLabel: false,
-      // style: { height: 60 }
-
-    }
-    }
+      activeTintColor: "#000",
+      inactiveTintColor:'#8DD061',
+    }}
   >
     <Tab.Screen
       name="home"
       component={home}
       options={{
-        tabBarIcon: ({ color }) => (
+        tabBarIcon: ({color}) => (
           <Image
-            style={{ width: 18, height: 18 }}
+            style={{ width: 18, height: 18, tintColor: color  }}
             source={require('./src/assets/icons/search1.png')}
           />
 
@@ -78,7 +77,7 @@ const tab = () => (
       options={{
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 18, height: 18 }}
+            style={{ width: 18, height: 18, tintColor: color }}
             source={require('./src/assets/icons/menu.png')}
           />
         )
@@ -92,7 +91,7 @@ const tab = () => (
       options={{
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 34, height: 34 }}
+            style={{ width: 34, height: 34, tintColor: color}}
             source={require('./src/assets/icons/addmore.png')}
           />
 
@@ -105,7 +104,7 @@ const tab = () => (
       options={{
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 18, height: 18 }}
+            style={{ width: 18, height: 18, tintColor: color }}
             source={require('./src/assets/icons/chat.png')}
           />
 
@@ -117,10 +116,10 @@ const tab = () => (
       name="profile"
       component={profile}
       options={{
-        tabBarVisible:false,
+        // tabBarVisible:false,
         tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 18, height: 18 }}
+            style={{ width: 18, height: 18, tintColor: color }}
             source={require('./src/assets/icons/user1.png')}
           />
 
@@ -138,10 +137,10 @@ export default function App() {
           headerShown: false
         }}
       >
+        <Stack.Screen name="Home" component={DrawerFtn} />
         <Stack.Screen name="JoinUs" component={joinUs} />
         <Stack.Screen name="login" component={login} />
         <Stack.Screen name="signup" component={signup} />
-        <Stack.Screen name="Home" component={DrawerFtn} />
       </Stack.Navigator>
     </NavigationContainer>
   );

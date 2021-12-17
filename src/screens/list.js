@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
@@ -38,7 +38,18 @@ export default function list({ navigation }) {
                     />
                 </>
             ) :
-                <Text style={{textAlign: 'center', marginTop: 100,}}>The Data is render here</Text>
+                <>
+                    <View style={GolbalStyle.centerIcon}>
+                        <Image source={require('../assets/icons/centerIcon.png')} />
+                    </View>
+
+                    <View style={{ marginTop: 44, }} />
+                    <TextButton
+                        style={{ color: COLORS.white, fontSize: 18, lineHeight: 27, }}
+                        text='Add your first item +'
+                    // onPress={() => navigation.navigate('Home')}
+                    />
+                </>
             }
 
         </View>

@@ -17,12 +17,12 @@ export default function signup({ navigation }) {
                 icon={require('../assets/icons/location.png')}
                 location="Pomona, CA"
             />
-            <View style={{ flex: 1, }}>
+            <View style={{ flex: 1, justifyContent: "center" }}>
                 <View style={{ marginTop: 20 }}>
                     <Text style={GolbalStyle.title}>Sign Up</Text>
                 </View>
 
-                <View style={[GolbalStyle.loginButton, { backgroundColor: COLORS.white, marginTop: 30, borderColor: COLORS.white, }]}>
+                <View style={[GolbalStyle.loginButton, { backgroundColor: COLORS.white, marginTop: 16, borderColor: COLORS.white, }]}>
                     <TextInput
                         style={[GolbalStyle.buttonText, { color: COLORS.grayDark, width: '100%', paddingLeft: 16 }]}
                         placeholder="Full name"
@@ -50,7 +50,7 @@ export default function signup({ navigation }) {
                     />
                 </View>
 
-                <View style={{ marginTop: 40 }} />
+                <View style={{ marginTop: 16 }} />
                 <TextButton
                     style={{ color: COLORS.white, }}
                     text='Sign Up'

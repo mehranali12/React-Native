@@ -10,7 +10,7 @@ import {GolbalStyle} from "../utils/GlobalStyles";
 
 export default function joinUs({ navigation }) {
     return (
-        <View style={GolbalStyle.maincontainer}>
+        <View style={[GolbalStyle.maincontainer, {}]}>
 
             <Header
                 text='Keraa'
@@ -18,8 +18,8 @@ export default function joinUs({ navigation }) {
                 location="Pomona, CA"
             />
             
-            <View style={{ flex: 1 }}>
-                <View style={{ marginTop: 20 }}>
+            <View style={{ flex: 1, justifyContent: "center"}}>
+                <View style={{ marginTop: 16 }}>
                     <Text style={GolbalStyle.title}>Join Us</Text>
                 </View>
 

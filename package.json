@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^5.0.1",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^5.11.15",
     "@react-navigation/drawer": "^5.12.9",
@@ -23,10 +24,13 @@
     "react-native-dropdown-picker": "^5.2.3",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-image-crop-picker": "^0.37.2",
+    "react-native-modal-datetime-picker": "^13.0.0",
     "react-native-paper": "^4.10.1",
     "react-native-reanimated": "^2.2.4",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
+    "react-native-svg": "^12.1.1",
+    "react-native-svg-transformer": "^0.14.3",
     "react-native-virtualized-view": "^0.1.5"
   },
   "devDependencies": {

@@ -13,7 +13,8 @@ export default function profile({ navigation }) {
             <View style={{}}>
                 <Header
                     image={require('../../assets/profile.jpg')}
-                    text='Keraa'
+                    Keera='Keera'
+                    rating='5 Stars'
                     icon={require('../assets/icons/location.png')}
                     location="Pomona, CA"
                 />
@@ -59,17 +60,18 @@ export default function profile({ navigation }) {
                     <Image source={require('../assets/icons/rightErrow.png')}
                         style={{ alignSelf: 'center' }} />
                 </View>
-                <View style={[Styles.allFieldsSubField, { marginHorizontal: 25, }]}>
-                    <Text style={Styles.allFieldsSubText}>Logout</Text>
-                    <Image source={require('../assets/icons/rightErrow.png')}
-                        style={{ alignSelf: 'center' }} />
-                </View>
+                <TouchableOpacity  onPress={() => navigation.navigate('login')}>
+                    <View style={[Styles.allFieldsSubField, { marginHorizontal: 25, }]}>
+                        <Text style={Styles.allFieldsSubText}>Logout</Text>
+                        <Image source={require('../assets/icons/rightErrow.png')}
+                            style={{ alignSelf: 'center' }} />
+                    </View>
+                </TouchableOpacity>
 
             </View>
 
+            {/* <Bottom /> */}
 
-
-            <Bottom />
         </View>
     );
 }

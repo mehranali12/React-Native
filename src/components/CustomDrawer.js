@@ -1,22 +1,17 @@
 import React from 'react';
-import {
-    Title,
-    Caption,
-    Divider,
-    Drawer,
-} from 'react-native-paper';
+import { Divider, } from 'react-native-paper';
 import { View, Text, ScrollView, FlatList, Image, TouchableOpacity, } from 'react-native';
 import { COLORS, FONTS } from '../constants';
 import DrawerData from './drawerData';
 
 
-const CustomDrawer = ({props, navigation}) => {
+const CustomDrawer = ({ props, navigation }) => {
     return (
-        <View style={{ flex: 1, borderTopLeftRadius: 40, borderBottomLeftRadius: 40, }}>
+        <View style={{ flex: 1, borderTopLeftRadius: 40, borderBottomLeftRadius: 40,}}>
             <ScrollView>
-                <View style={{ marginTop: 48, paddingHorizontal: 16, }} >
+                <View style={{ flex: 1, marginTop: 48, paddingHorizontal: 16, }} >
                     <DrawerData
-                        style={{ color: COLORS.grayDark,  }}
+                        style={{ color: COLORS.grayDark, }}
                         text='ALL CATEGORIES'
                         onPress={() => navigation.navigate('Home')}
                         icon={require('../assets/icons/window.png')}
@@ -24,7 +19,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='VEHICLE'
@@ -34,7 +29,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='CAMERA'
@@ -44,7 +39,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='HOUSE'
@@ -54,7 +49,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='LAPTOP'
@@ -64,7 +59,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='VEHICLE'
@@ -74,7 +69,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='CAMERA'
@@ -84,7 +79,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='HOUSE'
@@ -94,7 +89,7 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{ marginTop: 24, paddingHorizontal: 16, }} >
+                <View style={{flex: 1, paddingHorizontal: 16, marginTop: 24, }} >
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='LAPTOP'
@@ -104,13 +99,13 @@ const CustomDrawer = ({props, navigation}) => {
                     />
                 </View>
 
-                <View style={{}}>
-                    <Divider style={{ borderWidth: 1, borderColor: COLORS.grayLight, marginTop: 130, }} />
-                </View>
-
-                <View style={{ marginTop: 24, paddingHorizontal: 20, flexDirection: 'row'}} >
-                    <Image source={require('../assets/icons/location.png')} />
-                    <Text style={{marginLeft: 15,  fontSize: 16, lineHeight: 24, fontFamily: FONTS.poppinsMedium, color: COLORS.grayDark, fontStyle: 'normal',}}>Pomona, CA</Text>
+                <Divider style={{ borderWidth: 1, borderColor: COLORS.grayLight, marginTop: '20%' }} />
+                <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-end', paddingHorizontal: 20, paddingVertical: 24, }}>
+                    <DrawerData
+                        style={{ color: COLORS.grayDark, }}
+                        text='Pomona, CA'
+                        icon={require('../assets/icons/location.png')}
+                    />
                 </View>
 
             </ScrollView>

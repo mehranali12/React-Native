@@ -37,6 +37,8 @@ buttonText: {
   fontSize: 16,
   lineHeight: 24,
   fontStyle: 'normal',
+  paddingHorizontal: 16,
+  paddingVertical: 5,
 },
 centerIcon: {
   paddingHorizontal: 70,
@@ -45,8 +47,8 @@ centerIcon: {
 loginButton: {
   borderWidth: 1,
   borderRadius: 10,
-  marginLeft: 56,
-  marginRight: 55,
+  marginLeft: 50,
+  marginRight: 50,
   height: 48,
   flexDirection: 'row',
   justifyContent: 'center',
