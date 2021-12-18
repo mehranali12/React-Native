@@ -15,13 +15,16 @@ import searchCategory from './src/screens/searchCategory';
 import { COLORS } from './src/constants';
 import CustomDrawer from './src/components/CustomDrawer';
 import profile from './src/screens/profile';
-import specialItem from './src/screens/specialItem';
+import productDetail from './src/screens/productDetail';
 import signup from './src/screens/signup';
 import { LogBox } from 'react-native'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+const SearchStack = createStackNavigator();
+const userListStack = createStackNavigator()
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications
 
@@ -40,14 +43,44 @@ const DrawerFtn = () => (
       name="searchCategory"
       component={searchCategory}
     />
-
-    <Drawer.Screen
-      name="specialItem"
-      component={specialItem}
-    />
-
   </Drawer.Navigator>
 
+)
+
+const searchTab = () => (
+  <SearchStack.Navigator
+    screenOptions={{
+      headerShown: false
+    }}
+  >
+    <SearchStack.Screen
+      name='Home'
+      component={home}
+    />
+    <SearchStack.Screen
+      name='productDetail'
+      component={productDetail}
+    />
+
+  </SearchStack.Navigator>
+
+)
+
+const userList = () => (
+  <userListStack.Navigator
+    screenOptions={{
+      headerShown:false
+    }}
+  >
+    <userListStack.Screen
+      name='listitem'
+      component={list}
+    />
+    <userListStack.Screen
+      name='ProductDetail'
+      component={productDetail}
+    />
+  </userListStack.Navigator>
 )
 
 const tab = () => (
@@ -55,16 +88,16 @@ const tab = () => (
     tabBarOptions={{
       showLabel: false,
       activeTintColor: "#000",
-      inactiveTintColor:'#8DD061',
+      inactiveTintColor: '#8DD061',
     }}
   >
     <Tab.Screen
       name="home"
-      component={home}
+      component={searchTab}
       options={{
-        tabBarIcon: ({color}) => (
+        tabBarIcon: ({ color }) => (
           <Image
-            style={{ width: 18, height: 18, tintColor: color  }}
+            style={{ width: 18, height: 18, tintColor: color }}
             source={require('./src/assets/icons/search1.png')}
           />
 
@@ -73,7 +106,7 @@ const tab = () => (
     />
     <Tab.Screen
       name="list"
-      component={list}
+      component={userList}
       options={{
         tabBarIcon: ({ color }) => (
           <Image
@@ -90,10 +123,7 @@ const tab = () => (
       component={addPost}
       options={{
         tabBarIcon: ({ color }) => (
-          <Image
-            style={{ width: 34, height: 34, tintColor: color}}
-            source={require('./src/assets/icons/addmore.png')}
-          />
+          <AntDesign name='pluscircle' color={color} size={32} />
 
         )
       }}

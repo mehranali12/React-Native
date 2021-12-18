@@ -1,153 +1,18 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet, Image, FlatList, TouchableOpacity, } from "react-native";
-import { COLORS } from '../constants/colors';
-import { FONTS } from '../constants/fonts';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { COLORS } from '../constants/colors';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import {
+    messages
+} from '../data/data';
 import { GolbalStyle } from "../utils/GlobalStyles";
 
-
 export default function searchCategory({ navigation }) {
-    const category = [
-        {
-            id: 1,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 2,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 3,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 4,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 5,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 6,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 7,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 8,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 9,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 10,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 11,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 12,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        }, {
-            id: 13,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 14,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-        {
-            id: 15,
-            name: 'Item 1',
-            icon: require('../../assets/carsmodel.jpg'),
-            day: 'Mon',
-            p1: 'Person 1',
-            p2: 'Hello there, Hope you are doing well...',
-            image: require('../assets/icons/rightErrow.png'),
-        },
-    ];
-
     const renderBox = (item, index) => {
         return (
-            <View style={{ paddingHorizontal: 16, marginBottom: 16}}>
-                <View style={{}} key={index}>
+            <View key={index} style={{ paddingHorizontal: 16, marginBottom: 16 }}>
+                <View >
                     <TouchableOpacity
                         style={{ flexDirection: "row", backgroundColor: "#fff", borderRadius: 15, height: 94 }}>
                         <Image
@@ -181,24 +46,20 @@ export default function searchCategory({ navigation }) {
             <View style={Styles.header}>
                 <Text style={GolbalStyle.headertext}>My Messages</Text>
                 <View style={{ flexDirection: 'row', }}>
-                    <View style={{ paddingRight: 16 }}>
+                    <View style={{ paddingRight: 16 , justifyContent:"center"}}>
                         <Image source={require('../assets/icons/message.png')}
                             style={{ height: 18, width: 24, }}
                         />
                     </View>
                     <View style={{ borderRightWidth: 1, marginRight: 16, }} />
                     <View style={{ flexDirection: "row", }}>
-                        <Image source={require('../assets/icons/delete.png')}
-                            style={{ height: 18, width: 24, }}
-                        />
+                       <MaterialCommunityIcons name="delete-outline" size={28} color='#8DD061' />
                     </View>
                 </View>
             </View>
-
-
             <ScrollView showsVerticalScrollIndicator={false}>
                 {
-                    category.map((item, index) => {
+                    messages.map((item, index) => {
                         return renderBox(item, index)
                     })
                 }

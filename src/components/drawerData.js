@@ -6,18 +6,20 @@ import { FONTS } from '../constants';
 
 export default DrawerData = ({ text, subtext, onPress, icon, style }) => {
     return (
-        <TouchableOpacity onPress={onPress} >
+        <TouchableOpacity onPress={onPress}  >
             <View style={[Styles.list, style]}>
 
-                <View style={{flexDirection: 'row',}}>
-                    <Image source={icon}
-                        style={{}} />
+                <View style={{ flexDirection: 'row', }}>
+                    <View style={{ }}>
+                        <Image resizeMode='contain' source={icon}
+                            style={{ height:25, width:25, }} />
+                    </View>
 
-                    <View style={{}}>
-                        <Text style={[Styles.text, style, { marginLeft: 10 }]}>{text}</Text>
+                    <View style={{ justifyContent: 'center' , marginLeft: 16 }}>
+                        <Text style={[Styles.text, style, { }]}>{text}</Text>
                     </View>
                 </View>
-                <View style={{}}>
+                <View style={{ justifyContent: "center" }}>
                     <Text style={[Styles.text, style, {}]}>{subtext}</Text>
                 </View>
 

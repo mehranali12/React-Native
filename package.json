@@ -21,9 +21,11 @@
     "react-native": "0.64.0",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-banner-carousel": "^1.0.3",
+    "react-native-calendars": "^1.1274.0",
     "react-native-dropdown-picker": "^5.2.3",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-image-crop-picker": "^0.37.2",
+    "react-native-maps": "^0.29.4",
     "react-native-modal-datetime-picker": "^13.0.0",
     "react-native-paper": "^4.10.1",
     "react-native-reanimated": "^2.2.4",
@@ -31,6 +33,7 @@
     "react-native-screens": "^3.9.0",
     "react-native-svg": "^12.1.1",
     "react-native-svg-transformer": "^0.14.3",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-virtualized-view": "^0.1.5"
   },
   "devDependencies": {

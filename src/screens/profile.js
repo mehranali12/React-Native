@@ -60,7 +60,7 @@ export default function profile({ navigation }) {
                     <Image source={require('../assets/icons/rightErrow.png')}
                         style={{ alignSelf: 'center' }} />
                 </View>
-                <TouchableOpacity  onPress={() => navigation.navigate('login')}>
+                <TouchableOpacity  onPress={() => navigation.navigate('JoinUs')}>
                     <View style={[Styles.allFieldsSubField, { marginHorizontal: 25, }]}>
                         <Text style={Styles.allFieldsSubText}>Logout</Text>
                         <Image source={require('../assets/icons/rightErrow.png')}
