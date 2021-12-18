@@ -6,6 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -21,6 +22,7 @@
     "react-native": "0.64.0",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-banner-carousel": "^1.0.3",
+    "react-native-bootsplash": "^3.2.4",
     "react-native-calendars": "^1.1274.0",
     "react-native-dropdown-picker": "^5.2.3",
     "react-native-gesture-handler": "^1.10.3",

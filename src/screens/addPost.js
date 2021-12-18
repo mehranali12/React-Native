@@ -148,7 +148,7 @@ export default function addPost({ navigation }) {
                         )
                     }}
                     // renderItem={renderItem}
-                    keyExtractor={(item, index) => index}
+                    keyExtractor={(item, index) => 'key'+index}
                 />
 
             </View>

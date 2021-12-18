@@ -128,7 +128,8 @@ export default function Home({ navigation }) {
                     <FlatList
                         data={category}
                         renderItem={renderItem}
-                        keyExtractor={(item, index) => index}
+                        keyExtractor={(item, index) => 'key' + index}
+
                         numColumns={5}
                     />
                 </View>
@@ -147,7 +148,8 @@ export default function Home({ navigation }) {
                         nestedScrollEnabled={true}
                         data={trendingProduct}
                         renderItem={renderTrending}
-                        listkey={(item, index) => index}
+                        keyExtractor={(item, index) => 'key1' + index}
+
                         numColumns={2}
                     />
                 </View>
@@ -162,13 +164,15 @@ export default function Home({ navigation }) {
                     {Object.keys(allProduct).map((item, key) => {
                         const a = item.toString()
                         return (
-                            <View style={{ marginVertical: 16, }}>
+                            <View key={key} style={{ marginVertical: 16, }}>
                                 <FlatList
                                     scrollEnabled={false}
                                     nestedScrollEnabled={true}
                                     data={allProduct[item]}
                                     renderItem={renderAllProduct}
-                                    listkey={(item, index) => index}
+                                    listKey={(item, index) => `_key${index.toString()}`}
+                                    keyExtractor={(item, index) => '_key' + index.toString()}
+
                                     numColumns={2}
                                 />
                             </View>

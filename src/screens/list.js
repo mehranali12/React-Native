@@ -71,7 +71,7 @@ export default function list({ navigation }) {
                         showsVerticalScrollIndicator={false}
                         data={lending}
                         renderItem={renderpupolerDataItem}
-                        listkey={(item, index) => index}
+                        keyExtractor={(item, index) => 'key'+index}
                         numColumns={2}
                     />
                 </View>

@@ -14,6 +14,7 @@ export default function searchCategory({ navigation }) {
             <View key={index} style={{ paddingHorizontal: 16, marginBottom: 16 }}>
                 <View >
                     <TouchableOpacity
+                        onPress={item?.onPress}
                         style={{ flexDirection: "row", backgroundColor: "#fff", borderRadius: 15, height: 94 }}>
                         <Image
                             style={{ borderTopLeftRadius: 8, borderBottomLeftRadius: 8, height: 93, width: '25%' }}
@@ -46,14 +47,14 @@ export default function searchCategory({ navigation }) {
             <View style={Styles.header}>
                 <Text style={GolbalStyle.headertext}>My Messages</Text>
                 <View style={{ flexDirection: 'row', }}>
-                    <View style={{ paddingRight: 16 , justifyContent:"center"}}>
+                    <View style={{ paddingRight: 16, justifyContent: "center" }}>
                         <Image source={require('../assets/icons/message.png')}
                             style={{ height: 18, width: 24, }}
                         />
                     </View>
                     <View style={{ borderRightWidth: 1, marginRight: 16, }} />
                     <View style={{ flexDirection: "row", }}>
-                       <MaterialCommunityIcons name="delete-outline" size={28} color='#8DD061' />
+                        <MaterialCommunityIcons name="delete-outline" size={28} color='#8DD061' />
                     </View>
                 </View>
             </View>

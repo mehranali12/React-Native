@@ -162,7 +162,7 @@ export const productFeature = [
     },
 
 ]
-export  const lending = [
+export const lending = [
     {
         key: 13,
         name: 'Lorem Ipsum sit de ell more',
@@ -221,7 +221,7 @@ export  const lending = [
     },
 ];
 
-export  const messages = [
+export const messages = [
     {
         id: 1,
         name: 'Item 1',
@@ -230,6 +230,7 @@ export  const messages = [
         p1: 'Person 1',
         p2: 'Hello there, Hope you are doing well...',
         image: require('../assets/icons/rightErrow.png'),
+        onPress: () => navigation.navigate('chatting'),
     },
     {
         id: 2,
@@ -357,3 +358,118 @@ export  const messages = [
         image: require('../assets/icons/rightErrow.png'),
     },
 ];
+
+export const chatting = [
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "image",
+        imagePath: null,
+        message: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Okay, let me take a look.",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: true,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "image",
+        imagePath: null,
+        message: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: true,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Please see them and if you need further info tell me.",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: true,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Hi, attached is the guide",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "How can I help you?",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Hello, my name is George Deglin.",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "image",
+        imagePath: null,
+        message: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Okay, let me take a look.",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: true,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "image",
+        imagePath: null,
+        message: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: true,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Please see them and if you need further info tell me.",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: true,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Hi, attached is the guide",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "How can I help you?",
+        imagePath: null,
+        time: "15:34",
+    },
+    {
+        isMyMessage: false,
+        senderProfilePicPath: require('../../assets/car.jpg'),
+        type: "text",
+        message: "Hello, my name is George Deglin.",
+        imagePath: null,
+        time: "15:34",
+    },
+]

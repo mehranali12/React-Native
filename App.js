@@ -1,32 +1,33 @@
-import 'react-native-gesture-handler';
-import * as React from 'react';
-import { StyleSheet, Image, } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import joinUs from './src/screens/joinUs';
-import login from './src/screens/login';
-import home from './src/screens/home';
-import list from './src/screens/list';
-import chat from './src/screens/chat';
-import addPost from './src/screens/addPost';
-import searchCategory from './src/screens/searchCategory';
-import { COLORS } from './src/constants';
+import * as React from 'react';
+import { Image, StyleSheet } from "react-native";
+import 'react-native-gesture-handler';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import CustomDrawer from './src/components/CustomDrawer';
-import profile from './src/screens/profile';
+import { COLORS } from './src/constants';
+import addPost from './src/screens/addPost';
+import chat from './src/screens/chat';
+import home from './src/screens/home';
+import joinUs from './src/screens/joinUs';
+import list from './src/screens/list';
+import login from './src/screens/login';
 import productDetail from './src/screens/productDetail';
+import profile from './src/screens/profile';
+import searchCategory from './src/screens/searchCategory';
 import signup from './src/screens/signup';
-import { LogBox } from 'react-native'
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import chatting from './src/screens/chatting'
+import RNBootSplash from "react-native-bootsplash"; // https://github.com/zoontek/react-native-bootsplash
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 const SearchStack = createStackNavigator();
 const userListStack = createStackNavigator()
-LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
-LogBox.ignoreAllLogs();//Ignore all log notifications
+const chatStack = createStackNavigator()
+
 
 const DrawerFtn = () => (
 
@@ -45,6 +46,22 @@ const DrawerFtn = () => (
     />
   </Drawer.Navigator>
 
+)
+const chatftn = () => (
+  <chatStack.Navigator
+    screenOptions={{
+      headerShown: false
+    }}
+  >
+    <chatStack.Screen
+      name='chatmain'
+      component={chat}
+    />
+    <chatStack.Screen
+      name='chatting'
+      component={chatting}
+    />
+  </chatStack.Navigator>
 )
 
 const searchTab = () => (
@@ -69,7 +86,7 @@ const searchTab = () => (
 const userList = () => (
   <userListStack.Navigator
     screenOptions={{
-      headerShown:false
+      headerShown: false
     }}
   >
     <userListStack.Screen
@@ -130,7 +147,7 @@ const tab = () => (
     />
     <Tab.Screen
       name="chat"
-      component={chat}
+      component={chatftn}
       options={{
         tabBarIcon: ({ color }) => (
           <Image
@@ -160,6 +177,9 @@ const tab = () => (
 )
 
 export default function App() {
+  React.useEffect(() => {
+    RNBootSplash.hide({ fade: true });
+  })
   return (
     <NavigationContainer>
       <Stack.Navigator
