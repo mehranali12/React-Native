@@ -37,12 +37,16 @@ const renderTrending = ({ item, index }) => {
             <Image
                 imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
                 source={item.icon}
-                style={Styles.ImageBackground} />
-            <Text style={Styles.ImageBackgroundText}>
-                {item.name}</Text>
-            <Text
-                style={Styles.ImageBackgroundSubText}>
-                {item.rate}</Text>
+                style={[Styles.ImageBackground]} />
+            <View style={{flex: 1,}}>
+                <Text style={[Styles.ImageBackgroundText]}>
+                    {item.name}
+                </Text>
+                <Text
+                    style={[Styles.ImageBackgroundSubText], { marginHorizontal: 8, paddingBottom: 8 }}>
+                    {item.rate}
+                </Text>
+            </View>
         </TouchableOpacity>)
 }
 const renderAllProduct = ({ item, index }) => {
@@ -81,17 +85,20 @@ const renderAllProduct = ({ item, index }) => {
                     width: '48%',
                     marginRight: 16,
                     marginTop: a == true ? 16 : 0,
-
                 }}>
                 <Image
                     imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
                     source={item.icon}
                     style={Styles.ImageBackground} />
-                <Text style={Styles.ImageBackgroundText}>
-                    {item.name}</Text>
-                <Text
-                    style={Styles.ImageBackgroundSubText}>
-                    {item.rate}</Text>
+
+                <View style={{flex: 1,}}>
+                    <Text style={Styles.ImageBackgroundText}>
+                        {item.name}
+                    </Text>
+                    <Text style={[Styles.ImageBackgroundSubText]}>
+                        {item.rate}
+                    </Text>
+                </View>
             </TouchableOpacity>
         )
     }
@@ -149,7 +156,6 @@ export default function Home({ navigation }) {
                         data={trendingProduct}
                         renderItem={renderTrending}
                         keyExtractor={(item, index) => 'key1' + index}
-
                         numColumns={2}
                     />
                 </View>
@@ -172,7 +178,6 @@ export default function Home({ navigation }) {
                                     renderItem={renderAllProduct}
                                     listKey={(item, index) => `_key${index.toString()}`}
                                     keyExtractor={(item, index) => '_key' + index.toString()}
-
                                     numColumns={2}
                                 />
                             </View>
@@ -211,13 +216,15 @@ const Styles = StyleSheet.create({
         marginTop: 20,
     },
     ImageBackground: {
+        flex: 1,
         width: '100%',
-        height: 120,
+        height: 100,
         resizeMode: 'cover',
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
     },
     ImageBackgroundText: {
+        flex: 1,
         color: COLORS.blue,
         fontFamily: FONTS.poppins,
         fontStyle: 'normal',
@@ -233,10 +240,10 @@ const Styles = StyleSheet.create({
         fontStyle: 'normal',
         marginLeft: 8,
         marginRight: 8,
-        marginTop: 5,
         fontSize: 10,
         lineHeight: 15,
-        paddingBottom: 10
+        paddingBottom: 10,
+        flex: 1,
     },
 
 });

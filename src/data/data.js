@@ -33,7 +33,7 @@ export const allProduct = {
         {
             key: 5,
             name: 'Rent a car',
-            icon: require('../assets/icons/car.png'),
+            icon: require('../assets/icons/Vector1.png'),
         },
         {
             key: 6,
@@ -50,7 +50,7 @@ export const allProduct = {
         {
             key: 8,
             name: 'Lorem Ipsum sit de ell more',
-            icon: require('../../assets/carsmodel.jpg'),
+            icon: require('../assets/icons/carsmodel.jpg'),
             rate: '$10/day • $50/week • $90/month'
         },
     ],
@@ -58,7 +58,7 @@ export const allProduct = {
         {
             key: 9,
             name: 'Photography',
-            icon: require('../assets/icons/camera.png'),
+            icon: require('../assets/icons/Vector2.png'),
         },
         {
             key: 10,
