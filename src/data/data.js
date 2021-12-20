@@ -33,7 +33,8 @@ export const allProduct = {
         {
             key: 5,
             name: 'Rent a car',
-            icon: require('../assets/icons/car.png'),
+            icon: require('../assets/images/car.png'),
+           
         },
         {
             key: 6,
@@ -58,7 +59,7 @@ export const allProduct = {
         {
             key: 9,
             name: 'Photography',
-            icon: require('../assets/icons/camera.png'),
+            icon: require('../assets/images/pic.png'),
         },
         {
             key: 10,

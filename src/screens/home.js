@@ -38,11 +38,18 @@ const renderTrending = ({ item, index }) => {
                 imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
                 source={item.icon}
                 style={Styles.ImageBackground} />
-            <Text style={Styles.ImageBackgroundText}>
-                {item.name}</Text>
-            <Text
-                style={Styles.ImageBackgroundSubText}>
-                {item.rate}</Text>
+            <View style={{  flex: 1 }}>
+                <View style={{flex:1}}>
+                    <Text style={Styles.ImageBackgroundText}>
+                        {item.name}</Text>
+
+                </View>
+
+
+                <Text
+                    style={Styles.ImageBackgroundSubText}>
+                    {item.rate}</Text>
+            </View>
         </TouchableOpacity>)
 }
 const renderAllProduct = ({ item, index }) => {
