@@ -55,24 +55,26 @@ export default function productDetail({ navigation }) {
 
                         </View>
                     </View>
-                    <View style={[Styles.textView, { marginTop: 10 }]}>
-                        <Text style={Styles.text}>2017 BMW</Text>
-                    </View>
-                    <View style={Styles.imageView}>
-                        <Image source={require('../../assets/profile.jpg')}
-                            style={{ borderRadius: 22, }}
-                        />
-                        <View style={{ marginLeft: 10, }}>
-                            <Text style={[Styles.profiletext, { fontSize: 14, lineHeight: 21, color: COLORS.grayDark }]}>Owner</Text>
-                            <Text style={[Styles.profiletext, { fontSize: 16, lineHeight: 24, color: COLORS.black }]}>Dilawar Hussain</Text>
+
+                    <ScrollView contentContainerStyle={{ }}>
+                        <View style={[Styles.textView, { marginTop: 10 }]}>
+                            <Text style={Styles.text}>2017 BMW</Text>
                         </View>
-                    </View>
-                    <View style={Styles.TopMenuButtonDiv}>
-                        <TopMenuButton tittle='$50/' subTittle='day' style={Styles.textStyle} />
-                        <TopMenuButton tittle='$50/' subTittle='week' style={Styles.textStyle} />
-                        <TopMenuButton tittle='$50/' subTittle='month' style={Styles.textStyle} />
-                    </View>
-                    <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 16 }}>
+                        <View style={Styles.imageView}>
+                            <Image source={require('../../assets/profile.jpg')}
+                                style={{ borderRadius: 22, }}
+                            />
+                            <View style={{ marginLeft: 10, }}>
+                                <Text style={[Styles.profiletext, { fontSize: 14, lineHeight: 21, color: COLORS.grayDark }]}>Owner</Text>
+                                <Text style={[Styles.profiletext, { fontSize: 16, lineHeight: 24, color: COLORS.black }]}>Dilawar Hussain</Text>
+                            </View>
+                        </View>
+                        <View style={Styles.TopMenuButtonDiv}>
+                            <TopMenuButton tittle='$50/' subTittle='day' style={Styles.textStyle} />
+                            <TopMenuButton tittle='$50/' subTittle='week' style={Styles.textStyle} />
+                            <TopMenuButton tittle='$50/' subTittle='month' style={Styles.textStyle} />
+                        </View>
+
                         <View style={[Styles.textView, {}]}>
                             <Text style={Styles.text}>About Item:</Text>
                         </View>
@@ -131,7 +133,7 @@ export default function productDetail({ navigation }) {
                     }}
                     statusBarTranslucent={true}
                 >
-                    <View style={{ flex: 1, justifyContent: "flex-end", borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: "rgba(0,0,0,0.5)" }}>
+                    <View style={{ flex: 1, justifyContent: "flex-end", borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: "rgba(0,0,0,0.5)", marginVertical: 16, }}>
 
                         <TouchableOpacity style={{ height: '45%' }} onPress={() => setcalandar(false)}></TouchableOpacity>
                         <View style={{ height: '65%', backgroundColor: "#fff", paddingTop: 18, borderRadius: 10 }}>
@@ -158,8 +160,6 @@ export default function productDetail({ navigation }) {
                                     setcalandar(false)
                                 }}
                             />
-
-
                         </View>
                     </View>
 
