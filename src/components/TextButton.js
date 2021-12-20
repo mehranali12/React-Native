@@ -16,7 +16,7 @@ export default TextButton = ({ text, onPress, icon, style }) => {
                 ) : null}
 
                 <Text style={[style,
-                    { fontSize: 16, fontFamily: FONTS.poppins, paddingLeft: 10,}]}>
+                    { fontSize: 16, fontFamily: FONTS.poppins, paddingLeft: icon ? 10 :0,}]}>
                     {text}</Text>
             </TouchableOpacity>
         </View>
