@@ -44,8 +44,6 @@ const renderTrending = ({ item, index }) => {
                         {item.name}</Text>
 
                 </View>
-
-
                 <Text
                     style={Styles.ImageBackgroundSubText}>
                     {item.rate}</Text>
