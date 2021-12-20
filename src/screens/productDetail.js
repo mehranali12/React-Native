@@ -133,7 +133,7 @@ export default function productDetail({ navigation }) {
                     }}
                     statusBarTranslucent={true}
                 >
-                    <View style={{ flex: 1, justifyContent: "flex-end", borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: "rgba(0,0,0,0.5)", marginVertical: 16, }}>
+                    <View style={{ flex: 1, justifyContent: "flex-end", borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: "rgba(0,0,0,0.5)", marginBottom: 16, }}>
 
                         <TouchableOpacity style={{ height: '45%' }} onPress={() => setcalandar(false)}></TouchableOpacity>
                         <View style={{ height: '65%', backgroundColor: "#fff", paddingTop: 18, borderRadius: 10 }}>
