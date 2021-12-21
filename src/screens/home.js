@@ -28,24 +28,29 @@ const renderTrending = ({ item, index }) => {
     return (
         <TouchableOpacity onPress={item?.onPress}
             style={{
+                // flex:1,
                 backgroundColor: COLORS.white,
                 borderRadius: 15,
                 width: '48%',
                 marginRight: 16,
                 marginTop: a == true ? 16 : 0,
             }}>
-            <Image
-                imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
-                source={item.icon}
-                style={Styles.ImageBackground} />
-            <View style={{  flex: 1 }}>
-                <View style={{flex:1}}>
-                    <Text style={Styles.ImageBackgroundText}>
+            <View>
+                <Image
+                    imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
+                    source={item.icon}
+                    style={Styles.ImageBackground} />
+
+            </View>
+            <View style={{ flex: 1 }}>
+                <View style={{ flex: 1, }}>
+                    <Text numberOfLines={2} style={Styles.ImageBackgroundText}>
                         {item.name}</Text>
 
                 </View>
                 <Text
-                    style={Styles.ImageBackgroundSubText}>
+                    style={Styles.ImageBackgroundSubText}
+                >
                     {item.rate}</Text>
             </View>
         </TouchableOpacity>)
@@ -92,7 +97,7 @@ const renderAllProduct = ({ item, index }) => {
                     source={item.icon}
                     style={Styles.ImageBackground} />
 
-                <View style={{flex: 1,}}>
+                <View style={{ flex: 1, }}>
                     <Text style={Styles.ImageBackgroundText}>
                         {item.name}
                     </Text>
@@ -244,7 +249,7 @@ const Styles = StyleSheet.create({
         fontSize: 10,
         lineHeight: 15,
         paddingBottom: 10,
-        flex: 1,
+
     },
 
 });

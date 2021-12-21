@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, } from 'react-native';
-import { color } from 'react-native-reanimated';
-import { COLORS } from '../constants';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { FONTS } from '../constants';
 import { GolbalStyle } from "../utils/GlobalStyles";
 
@@ -16,7 +14,7 @@ export default TextButton = ({ text, onPress, icon, style }) => {
                 ) : null}
 
                 <Text style={[style,
-                    { fontSize: 16, fontFamily: FONTS.poppins, paddingLeft: 10,}]}>
+                    { fontSize: 16, fontFamily: FONTS.poppins, paddingLeft: icon ? 10 :0,}]}>
                     {text}</Text>
             </TouchableOpacity>
         </View>

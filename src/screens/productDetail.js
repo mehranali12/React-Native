@@ -56,7 +56,7 @@ export default function productDetail({ navigation }) {
                         </View>
                     </View>
 
-                    <ScrollView contentContainerStyle={{ }}>
+                    <ScrollView contentContainerStyle={{ paddingBottom:12}}>
                         <View style={[Styles.textView, { marginTop: 10 }]}>
                             <Text style={Styles.text}>2017 BMW</Text>
                         </View>
@@ -133,10 +133,10 @@ export default function productDetail({ navigation }) {
                     }}
                     statusBarTranslucent={true}
                 >
-                    <View style={{ flex: 1, justifyContent: "flex-end", borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: "rgba(0,0,0,0.5)", marginBottom: 22, }}>
+                    <View style={{ flex: 1, justifyContent: "flex-end", borderTopLeftRadius: 10, borderTopRightRadius: 10, backgroundColor: "rgba(0,0,0,0.5)", }}>
 
                         <TouchableOpacity style={{ height: '45%' }} onPress={() => setcalandar(false)}></TouchableOpacity>
-                        <View style={{ height: '65%', backgroundColor: "#fff", paddingTop: 18, borderTopLeftRadius: 10, borderTopRightRadius: 10, }}>
+                        <View style={{ height: '70%', backgroundColor: "#fff", paddingTop: 18, borderRadius: 10 }}>
 
                             <TouchableOpacity onPress={() => setcalandar(false)}
                                 style={{
@@ -153,7 +153,6 @@ export default function productDetail({ navigation }) {
 
                             </TouchableOpacity>
                             <CustomCalendar />
-                            <View style={{}}>
                             <TextButton
                                 style={{ color: COLORS.white, }}
                                 text='Confirm'
@@ -161,7 +160,6 @@ export default function productDetail({ navigation }) {
                                     setcalandar(false)
                                 }}
                             />
-                            </View>
                         </View>
                     </View>
 
