@@ -142,20 +142,22 @@ export default function searchCategory({ navigation }) {
                                 />
                             </View>
 
-                            <View style={{ justifyContent: 'center', backgroundColor: COLORS.green, borderTopRightRadius: 10, borderBottomRightRadius: 10, height: 45, width: '12%', alignItems: "center" }}>
+                            <TouchableOpacity
+                            onPress={()=> navigation.openDrawer()}
+                            style={{ justifyContent: 'center', backgroundColor: COLORS.green, borderTopRightRadius: 10, borderBottomRightRadius: 10, height: 45, width: '12%', alignItems: "center" }}>
                                 <Image
                                     resizeMode="contain"
                                     // style={{ height: 40, width: 40, }}
                                     source={require('../assets/icons/level.png')} />
-                            </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         onPress={() => navigation.openDrawer()}
                         style={{ justifyContent: 'center', marginLeft: 12 }}>
                         <Image source={require('../assets/icons/window.png')} style={{ alignSelf: "center" }} />
 
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
                 {show && (
                     <View style={[GolbalStyle.TopMenuButtonDiv, {  }]}>
