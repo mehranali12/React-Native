@@ -1,8 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, } from 'react-native';
-import { color } from 'react-native-reanimated';
-import { COLORS } from '../constants';
-import { FONTS } from '../constants';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { COLORS, FONTS } from '../constants';
 
 export default MyPostFields = ({ text, onPress, icon, style }) => {
     return (

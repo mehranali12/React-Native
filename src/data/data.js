@@ -44,7 +44,7 @@ export const allProduct = {
         },
         {
             key: 7,
-            name: 'Lorem Ipsum sit de ell more',
+            name: 'Lorem Ipsum sit de ell',
             icon: require('../../assets/car2.jpg'),
             rate: '$10/day • $50/week • $90/month'
         },
