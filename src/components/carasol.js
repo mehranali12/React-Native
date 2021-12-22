@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, Dimensions, Animated } from "react-nativ
 import Carousel from 'react-native-snap-carousel';
 import { scrollInterpolator, animatedStyles } from '../utils/animations';
 
+
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 4 / 4);

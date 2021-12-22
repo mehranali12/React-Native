@@ -21,6 +21,7 @@ import searchCategory from './src/screens/searchCategory';
 import signup from './src/screens/signup';
 import chatting from './src/screens/chatting'
 import RNBootSplash from "react-native-bootsplash"; // https://github.com/zoontek/react-native-bootsplash
+import filter from './src/screens/filter';
 
 const Drawer = createDrawerNavigator();
 const CatDrawer = createDrawerNavigator();
@@ -42,6 +43,12 @@ const catDrawerFtn = () => (
       name="searchCategorysrc"
       component={searchCategory}
     />
+
+    <CatDrawer.Screen
+      name="Cars"
+      component={filter}
+    />
+
   </CatDrawer.Navigator>
 
 )
