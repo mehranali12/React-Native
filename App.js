@@ -22,6 +22,7 @@ import signup from './src/screens/signup';
 import chatting from './src/screens/chatting'
 import RNBootSplash from "react-native-bootsplash"; // https://github.com/zoontek/react-native-bootsplash
 import filter from './src/screens/filter';
+import SearchCustomDrawer from './src/components/searchCustomDearwe'
 
 const Drawer = createDrawerNavigator();
 const CatDrawer = createDrawerNavigator();
@@ -36,6 +37,7 @@ const chatStack = createStackNavigator()
 const catDrawerFtn = () => (
 
   <CatDrawer.Navigator
+    drawerContent={props => <SearchCustomDrawer {...props} />}
     drawerStyle={styles.drawerStyle}
     drawerPosition='right'
   >

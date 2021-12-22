@@ -25,7 +25,6 @@ export const category = [
         key: 4,
         name: 'ALL',
         icon: require('../assets/icons/window.png'),
-        onPress: () => navigation.openDrawer(),
     },
 ];
 export const allProduct = {
@@ -87,28 +86,24 @@ export const trendingProduct = [
         name: 'Lorem Ipsum sit de ell more',
         icon: require('../assets/icons/carsmodel.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('productDetail'),
     },
     {
         key: 14,
         name: 'Lorem Ipsum sit  ell more',
         icon: require('../../assets/camera1.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('productDetail'),
     },
     {
         key: 15,
         name: 'Lorem Ipsum  de ell more',
         icon: require('../../assets/house.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('productDetail'),
     },
     {
         key: 16,
         name: 'Lorem Ipsum sit de ell more',
         icon: require('../../assets/carsmodel.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('productDetail'),
     },
 ];
 
@@ -169,56 +164,56 @@ export const lending = [
         name: 'Lorem Ipsum sit de ell more',
         icon: require('../assets/icons/carsmodel.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
     {
         key: 14,
         name: 'Lorem Ipsum sit  ell more',
         icon: require('../../assets/camera1.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
     {
         key: 15,
         name: 'Lorem Ipsum  de ell more',
         icon: require('../../assets/house.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
     {
         key: 16,
         name: 'Lorem Ipsum sit de ell more',
         icon: require('../../assets/carsmodel.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
     {
         key: 13,
         name: 'Lorem Ipsum sit de ell more',
         icon: require('../assets/icons/carsmodel.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
     {
         key: 14,
         name: 'Lorem Ipsum sit  ell more',
         icon: require('../../assets/camera1.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
     {
         key: 15,
         name: 'Lorem Ipsum  de ell more',
         icon: require('../../assets/house.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
     {
         key: 16,
         name: 'Lorem Ipsum sit de ell more',
         icon: require('../../assets/carsmodel.jpg'),
         rate: '$10/day • $50/week • $90/month',
-        onPress: () => navigation.navigate('ProductDetail'),
+       
     },
 ];
 
@@ -231,7 +226,7 @@ export const messages = [
         p1: 'Person 1',
         p2: 'Hello there, Hope you are doing well...',
         image: require('../assets/icons/rightErrow.png'),
-        onPress: () => navigation.navigate('chatting'),
+       
     },
     {
         id: 2,

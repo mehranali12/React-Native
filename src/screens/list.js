@@ -1,40 +1,121 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import TextButton from "../components/TextButton";
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
-import TextButton from "../components/TextButton";
 import { GolbalStyle } from "../utils/GlobalStyles";
-import {
-    lending
-} from '../data/data'
 
-const renderpupolerDataItem = ({ item, index }) => {
-    let a = true
-    if (index == 1 || index == 0) {
-        a = false
+const renderBox = ({ item, index }) => {
+    let showBanner = false
+    if (index % 4 == 0 && index != 0) {
+        showBanner = true
     }
     return (
-        <TouchableOpacity onPress={item?.onPress}
-            style={{
-                backgroundColor: COLORS.white,
-                borderRadius: 15,
-                width: '48%',
-                marginRight: 16,
-                marginTop: a == true ? 16 : 0,
-            }}>
-            <Image
-                imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
-                source={item.icon}
-                style={Styles.ImageBackground} />
-            <Text style={Styles.ImageBackgroundText}>
-                {item.name}</Text>
-            <Text
-                style={Styles.ImageBackgroundSubText}>
-                {item.rate}</Text>
-        </TouchableOpacity>)
+        <View>
+            {
+                showBanner ? (
+                    <Image
+                        resizeMode="contain"
+                        style={{ marginTop: 16, width: "100%" }}
+                        source={require("../../assets/baner.jpg")}
+                    />
+                ) : null
+            }
+
+            <View style={{ flexDirection: "row", marginTop: 16, backgroundColor: "#fff", borderRadius: 15, height: 120, elevation: 3, marginHorizontal: 8 }}>
+                <Image
+                    style={{ borderTopLeftRadius: 8, borderBottomLeftRadius: 8, height: '100%', width: '48%' }}
+                    resizeMode="cover"
+                    source={item.icon}
+                />
+                <View style={{ padding: "3%", flex: 1 }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{item.name}</Text>
+                        <View>
+                            <Text style={{ fontSize: 16 }}>{item.time}</Text>
+                        </View>
+                    </View>
+                    <Text style={{ marginTop: 8 }}>{item.p1}</Text>
+                    <Text style={{ marginTop: 8, marginBottom: 8 }}>{item.p2}</Text>
+
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <Text>{item.p3}</Text>
+                        <TouchableOpacity>
+                            <Image
+                                style={{ height: 16, width: 10, alignSelf: 'center', }}
+                                source={item.image}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </View>
+        </View>
+    )
 }
 export default function list({ navigation }) {
     const [show, setshow] = useState(true)
+    const category = [
+        {
+            id: 1,
+            name: 'Toyota Corolla',
+            icon: require('../../assets/carsmodel.jpg'),
+            time: '2h',
+            p1: '$10/day',
+            p2: '$30/week',
+            p3: '$100/month',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 2,
+            name: 'Toyota Corolla',
+            icon: require('../../assets/camera1.jpg'),
+            time: '1h',
+            p1: '$10/day',
+            p2: '$12/week',
+            p3: '$40/month',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 1,
+            name: 'Toyota Corolla',
+            icon: require('../../assets/carsmodel.jpg'),
+            time: '2h',
+            p1: '$10/day',
+            p2: '$10/week',
+            p3: '$30/month',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 2,
+            name: 'Toyota Corolla',
+            icon: require('../../assets/camera1.jpg'),
+            time: '1h',
+            p1: '$10/day',
+            p2: '$10/week',
+            p3: '$10/month',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 1,
+            name: 'Toyota Corolla',
+            icon: require('../../assets/carsmodel.jpg'),
+            time: '2h',
+            p1: '$10/day',
+            p2: '$10/week',
+            p3: '$10/month',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+        {
+            id: 2,
+            name: 'Toyota Corolla',
+            icon: require('../../assets/camera1.jpg'),
+            time: '1h',
+            p1: '$10/day',
+            p2: '$10/week',
+            p3: '$10/month',
+            image: require('../assets/icons/rightErrow.png'),
+        },
+    ];
     return (
         <View style={GolbalStyle.maincontainer}>
 
@@ -65,14 +146,18 @@ export default function list({ navigation }) {
                 </>
 
             ) :
-                <View style={{ marginHorizontal: 12, marginTop: 16, flex: 1 }}>
+                <View style={{ marginHorizontal: 12, marginTop: 16, flex: 1 , }}>
                     <FlatList
-                        style={{ marginBottom: 16 }}
                         showsVerticalScrollIndicator={false}
-                        data={lending}
-                        renderItem={renderpupolerDataItem}
-                        keyExtractor={(item, index) => 'key'+index}
-                        numColumns={2}
+                        data={category}
+                        renderItem={renderBox}
+                        ListFooterComponent={()=> {
+                            return(
+                                <View style={{height:10}}>
+                                    </View>
+                            )
+                        }}
+                        keyExtractor={(item, index) => index}
                     />
                 </View>
             }

@@ -14,7 +14,7 @@ export default function searchCategory({ navigation }) {
             <View key={index} style={{ paddingHorizontal: 16, marginBottom: 16 }}>
                 <View >
                     <TouchableOpacity
-                        onPress={item?.onPress}
+                        onPress={()=> navigation.navigate('chatting')}
                         style={{ flexDirection: "row", backgroundColor: "#fff", borderRadius: 15, height: 94 }}>
                         <Image
                             style={{ borderTopLeftRadius: 8, borderBottomLeftRadius: 8, height: 93, width: '25%' }}

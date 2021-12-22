@@ -10,51 +10,7 @@ import {
     trendingProduct
 } from '../data/data'
 
-const renderItem = ({ item, index }) => (
-    <TouchableOpacity onPress={item?.onPress}
-        style={{ width: "20%", justifyContent: "center", alignItems: "center" }}>
-        <Image
-            resizeMode="contain"
-            source={item.icon} />
-        <Text style={Styles.toptext}>{item.name}</Text>
-    </TouchableOpacity>
 
-)
-const renderTrending = ({ item, index }) => {
-    let a = true
-    if (index == 1 || index == 0) {
-        a = false
-    }
-    return (
-        <TouchableOpacity onPress={item?.onPress}
-            style={{
-                // flex:1,
-                backgroundColor: COLORS.white,
-                borderRadius: 15,
-                width: '48%',
-                marginRight: 16,
-                marginTop: a == true ? 16 : 0,
-            }}>
-            <View>
-                <Image
-                    imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
-                    source={item.icon}
-                    style={Styles.ImageBackground} />
-
-            </View>
-            <View style={{ flex: 1 }}>
-                <View style={{ flex: 1, }}>
-                    <Text numberOfLines={2} style={Styles.ImageBackgroundText}>
-                        {item.name}</Text>
-
-                </View>
-                <Text
-                    style={Styles.ImageBackgroundSubText}
-                >
-                    {item.rate}</Text>
-            </View>
-        </TouchableOpacity>)
-}
 const renderAllProduct = ({ item, index }) => {
     let a = false
     if (index == 2 || index == 3) {
@@ -110,6 +66,58 @@ const renderAllProduct = ({ item, index }) => {
     }
 }
 export default function Home({ navigation }) {
+    const renderTrending = ({ item, index }) => {
+        let a = true
+        if (index == 1 || index == 0) {
+            a = false
+        }
+        return (
+            <TouchableOpacity onPress={() => navigation.navigate('productDetail')}
+                style={{
+                    // flex:1,
+                    backgroundColor: COLORS.white,
+                    borderRadius: 15,
+                    width: '48%',
+                    marginRight: 16,
+                    marginTop: a == true ? 16 : 0,
+                }}>
+                <View>
+                    <Image
+                        imageStyle={{ borderTopRightRadius: 15, borderTopLeftRadius: 15, }}
+                        source={item.icon}
+                        style={Styles.ImageBackground} />
+
+                </View>
+                <View style={{ flex: 1 }}>
+                    <View style={{ flex: 1, }}>
+                        <Text numberOfLines={2} style={Styles.ImageBackgroundText}>
+                            {item.name}</Text>
+
+                    </View>
+                    <Text
+                        style={Styles.ImageBackgroundSubText}
+                    >
+                        {item.rate}</Text>
+                </View>
+            </TouchableOpacity>)
+    }
+
+    const renderItem = ({ item, index }) => (
+        <TouchableOpacity onPress={() => {
+            if (index == 4) {
+                navigation.openDrawer()
+            }
+        }
+
+        }
+            style={{ width: "20%", justifyContent: "center", alignItems: "center" }}>
+            <Image
+                resizeMode="contain"
+                source={item.icon} />
+            <Text style={Styles.toptext}>{item.name}</Text>
+        </TouchableOpacity>
+
+    )
 
     return (
         <View style={[GolbalStyle.maincontainer]}>
