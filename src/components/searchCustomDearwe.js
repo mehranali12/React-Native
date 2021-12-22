@@ -12,9 +12,6 @@ const CustomDrawer = ({ props, navigation }) => {
     const [selected, setselected] = useState(['audi', 'Modal 2018'])
     const [list, setlist] = useState([
         {
-            title: "audi"
-        },
-        {
             title: "Modal 2018"
         },
         {
@@ -57,7 +54,8 @@ const CustomDrawer = ({ props, navigation }) => {
                     <DrawerData
                         style={{ color: COLORS.grayDark, }}
                         text='VEHICLE'
-                        onPress={() => navigation.navigate('searchCategory')}
+                        onPress={() => navigation.
+                            navigate('searchCategory')}
                         icon={require('../assets/icons/car.png')}
                         subtext='(10)'
                     />
@@ -72,7 +70,7 @@ const CustomDrawer = ({ props, navigation }) => {
                                         uncheckedColor={COLORS.secondaryDark}
                                         onPress={() => {
                                             if (selected.includes(item.title)) {
-                                                setselected(selected.filter(obj => obj.title != item.title))
+                                                setselected(selected.filter(obj => obj != item.title))
                                             } else {
                                                 setselected(selected.concat(item.title))
                                             }
