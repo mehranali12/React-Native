@@ -22,7 +22,6 @@
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-app-intro-slider": "^4.0.4",
-    "react-native-banner-carousel": "^1.0.3",
     "react-native-bootsplash": "^3.2.4",
     "react-native-calendars": "^1.1274.0",
     "react-native-dropdown-picker": "^5.2.3",
@@ -34,6 +33,7 @@
     "react-native-reanimated": "^2.1.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
+    "react-native-snap-carousel": "^3.9.1",
     "react-native-vector-icons": "^9.0.0",
     "react-native-virtualized-view": "^0.1.5"
   },

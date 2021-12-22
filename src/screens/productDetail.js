@@ -3,7 +3,7 @@ import { Image, Linking, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-// import Slider from "../components/carasol";
+import Slider from "../components/carasol";
 import CustomCalendar from "../components/CustomCalendar";
 import TextButton from '../components/TextButton';
 import TopMenuButton from "../components/topMenuButton";
@@ -23,7 +23,7 @@ export default function productDetail({ navigation }) {
 
                 <View style={{ flex: 1 }}>
                     <View style={Styles.slider}>
-                        {/* <Slider /> */}
+                        <Slider />
                         <View style={{ position: "absolute", paddingHorizontal: 18, marginVertical: '3%', flexDirection: "row", justifyContent: 'space-between', width: "100%" }}>
                             <TouchableOpacity onPress={() => navigation.goBack()}
                                 style={{

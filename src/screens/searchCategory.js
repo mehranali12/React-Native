@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import Entypo from 'react-native-vector-icons/Entypo';
 import TopMenuButton from "../components/topMenuButton";
 import { COLORS } from '../constants/colors';
@@ -117,7 +118,6 @@ export default function searchCategory({ navigation }) {
                 </View>
             </View>
         )
-
     }
     return (
         <View style={[GolbalStyle.maincontainer]}>
@@ -143,8 +143,8 @@ export default function searchCategory({ navigation }) {
                             </View>
 
                             <TouchableOpacity
-                            onPress={()=> navigation.openDrawer()}
-                            style={{ justifyContent: 'center', backgroundColor: COLORS.green, borderTopRightRadius: 10, borderBottomRightRadius: 10, height: 45, width: '12%', alignItems: "center" }}>
+                                onPress={() => navigation.openDrawer()}
+                                style={{ justifyContent: 'center', backgroundColor: COLORS.green, borderTopRightRadius: 10, borderBottomRightRadius: 10, height: 45, width: '12%', alignItems: "center" }}>
                                 <Image
                                     resizeMode="contain"
                                     // style={{ height: 40, width: 40, }}
@@ -156,27 +156,24 @@ export default function searchCategory({ navigation }) {
                         onPress={() => navigation.openDrawer()}
                         style={{ justifyContent: 'center', marginLeft: 12 }}>
                         <Image source={require('../assets/icons/window.png')} style={{ alignSelf: "center" }} />
-
                     </TouchableOpacity> */}
                 </View>
                 {show && (
-                    <View style={[GolbalStyle.TopMenuButtonDiv, {  }]}>
-                        <TopMenuButton tittle='Model' style={[GolbalStyle.TopMenuButtonDivText, {}]} />
-                        <TopMenuButton tittle='Price' style={GolbalStyle.TopMenuButtonDivText} />
-                        <TopMenuButton tittle='Make' style={GolbalStyle.TopMenuButtonDivText} />
-                        <TouchableOpacity
+                    <View style={[GolbalStyle.TopMenuButtonDiv, {}]}>
+                        {/* <ScrollView  horizontal={true}> */}
+                            <TopMenuButton tittle='Model' onpress={() => setshow(false)} style={GolbalStyle.TopMenuButtonDivText} />
+                            <TopMenuButton tittle='Price' onpress={() => setshow(false)} style={GolbalStyle.TopMenuButtonDivText} />
+                            <TopMenuButton tittle='Make' onpress={() => setshow(false)} style={GolbalStyle.TopMenuButtonDivText} />
+                        {/* </ScrollView> */}
+
+                        {/* <TouchableOpacity
                             onPress={() => setshow(false)}
                             style={{ justifyContent: "center" }}>
                             <Entypo name='cross' color={'black'} size={24} />
-                        </TouchableOpacity>
-
+                        </TouchableOpacity> */}
                     </View>
 
-
                 )}
-
-
-
 
             </View>
             <FlatList

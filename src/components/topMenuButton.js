@@ -1,18 +1,20 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS } from '../constants/colors';
 import { FONTS } from '../constants/fonts';
 
 
-export default function topMenuButton({ tittle, subTittle, style, }) {
+export default function topMenuButton({ tittle, subTittle, style, onpress, icon }) {
     return (
         <View style={[Styles.maincontainer]}>
-
-            <View style={Styles.buttonDiv}>
+            <TouchableOpacity onPress={onpress}>
+            <View style={Styles.buttonDiv} onpress={onpress}>
                 <Text style={Styles.tittle}>{tittle}</Text>
                 <Text style={Styles.subTittle}>{subTittle}</Text>
             </View>
-        </View>
+            </TouchableOpacity>
+        </View >
     );
 }
 
@@ -22,6 +24,7 @@ const Styles = StyleSheet.create({
         flex: 1,
     },
     buttonDiv: {
+        borderWidth: 1,
         backgroundColor: COLORS.white,
         marginHorizontal: 16,
         height: 50,

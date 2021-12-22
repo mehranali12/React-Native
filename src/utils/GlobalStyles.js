@@ -76,9 +76,6 @@ TopMenuButtonDiv: {
   paddingBottom: 16,
 },
 TopMenuButtonDivText: {
-  padding: "5%",
-  borderRadius: 15,
-  backgroundColor: COLORS.gray,
   color: COLORS.blue,
   fontSize: 18,
   fontFamily: FONTS.poppins,
