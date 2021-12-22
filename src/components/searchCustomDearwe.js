@@ -86,8 +86,6 @@ const CustomDrawer = ({ props, navigation }) => {
                         })
                     }
                 </View>
-
-
             </ScrollView>
         </View>
     );

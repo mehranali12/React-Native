@@ -14,10 +14,6 @@ const images = [
     require("../../assets/car.jpg"),
     require("../../assets/car2.jpg"),
     require("../../assets/carsmodel.jpg"),
-    // require("../../assets/carsmodel.jpg"),
-    // require("../../assets/car.jpg"),
-    // require("../../assets/car2.jpg"),
-    // require("../../assets/carsmodel.jpg"),
 ];
 
 export default class slider extends React.Component {
