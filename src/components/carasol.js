@@ -42,7 +42,6 @@ export default class slider extends React.Component {
                 inactiveDotColor={COLORS.secondaryDark}
                 dotColor={COLORS.green}
                 dotStyle={{
-                    
                     width: 10,
                     height: 10,
                     borderRadius: 5,
@@ -55,7 +54,6 @@ export default class slider extends React.Component {
                 inactiveDotOpacity={0.4}
                 inactiveDotScale={0.6}
             />
-
         );
     }
 
@@ -75,14 +73,12 @@ export default class slider extends React.Component {
                     slideInterpolatedStyle={animatedStyles}
                     useScrollView={true}
                     actived
-                    onSnapToItem={(index) => this.setState({ index: index }) }
+                    onSnapToItem={(index) => this.setState({ index: index })}
                 // hasParallaxImages={true}
                 >
                 </Carousel>
-                <View style={{marginTop:'-15%'}}>
-
-              
-                {this.pagination}
+                <View style={{ marginTop: '-15%' }}>
+                    {this.pagination}
                 </View>
             </View>
         );
