@@ -150,7 +150,6 @@ export default function Home({ navigation }) {
                         data={category}
                         renderItem={renderItem}
                         keyExtractor={(item, index) => 'key' + index}
-
                         numColumns={5}
                     />
                 </View>
